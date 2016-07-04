@@ -1,0 +1,233 @@
+\chapter{Simetr'ias y Teor'ia de Grupos}
+\section{Elementos de Teor'ia de Grupos}
+
+Decimos que una colecci'on de elementos $g_i\in G$ forman un \textit{grupo} si ellos satisfacen las siguientes propiedades:
+\begin{enumerate}
+\item Clausura bajo una operaci'on de composici'on: Si $g_i,g_j\in G$, entonces $g_i\cdot g_j\in G$.
+\item Asociatividad bajo la composici'on: $\forall g_i,g_j,g_k\in G$, 
+$g_i\cdot (g_j\cdot g_k)=(g_i\cdot g_j)\cdot g_k$.
+
+\item Existencia de Elemento \textit{identidad}: existe un elemento $\mathbb{I}$ tal que $\forall g_i\in G$ satisface $g_i\cdot \mathbb{I}=\mathbb{I}\cdot g_i=g_i$.
+\item Existencia de Elemento \textit{inverso}: $\forall g_i\in G$ existe un elemento $g_i^{-1}\in G$ tal que $g_i \cdot g_i^{-1}=g_i^{-1} \cdot g_i=\mathbb{I}$.
+\end{enumerate} 
+
+Existen varios tipos de grupos. Un \textit{grupo discreto} tiene un n'umero finito de elementos. Sin embargo, estamos m'as interesados en los grupos continuos, como el grupo de rotaci'on y el grupo de Lorentz, los cuales dependen de un conjunto de par'ametros continuos.
+
+\subsection{Grupos de Lie}
+
+\subsection{$SO(2)$}
+
+El grupo $O(2)$ o rotaciones en dos dimensiones.
+Si rotamos el plano en un 'angulo $\theta$, luego las coordenadas $(x^\prime,y^\prime)$ del mismo punto en el nuevo sistema coordenado son dadas por:
+\begin{equation}
+\begin{pmatrix}x^{\prime}\\
+y^{\prime}
+\end{pmatrix}=\begin{pmatrix}\cos\theta & \sen\theta\\
+-\sen\theta & \cos\theta
+\end{pmatrix}\begin{pmatrix}x\\
+y
+\end{pmatrix}.
+\end{equation}
+Podemos abreviar esto como:
+\begin{equation}
+x^{i\prime}=O^{ij}(\theta)x^j.
+\end{equation}
+Para 'angulos peque\~nos, podemos reducir esto a
+\begin{equation}
+\delta x=\theta y;\,\,\,\, \delta y=-\theta x
+\end{equation}
+o simplemente
+\begin{equation}
+\delta x^i=\theta \epsilon^{ij}x^j,
+\end{equation}
+donde $\epsilon^{ij}$ es antisim'etrica. Estas matrices forman un grupo; por ejemplo, podemos escribir la inversa de alguna rotaci'on, dada por $O^{-1}(\theta)=O(-\theta):$
+\begin{equation}
+O(\theta)O(-\theta)=\mathbb{I}=\begin{pmatrix}1 & 0\\
+0 & 1
+\end{pmatrix}.
+\end{equation}
+El hecho de que estas matrices preserven invariante la longitud da lugar a restricciones sobre ellas. Para encontrar la naturaleza de estras restricciones, hagamos una rotaci'on sobre la distancia invariante:
+\begin{equation}
+\begin{aligned}
+x^{i\prime}x^{i\prime}&=&O^{ij}x^jO^{ik}x^k \\
+&=&x^j\left(O^{ij}O^{ij}\right)x^k \\
+&=& x^jx^j,
+\end{aligned}
+\end{equation}
+entonces esto es invariante si la matriz $O$ es ortogonal
+\begin{equation}
+O^{ij}O^{ij}=\delta^{jk}.
+\end{equation}
+Para tomar el inverso de una matriz ortogonal, simplemente tomamos la transpuesta. El grupo de rotaciones $O(2)$ es llamado grupo ortogonal en dos dimensiones, de hecho, puede ser definido como un conjunto de matrices reales dos dimensional matrices ortogonales. Cualquier matriz ortogonal puede ser escrita como la exponenciaci'on de un matriz antisim'etrica $\tau$
+\begin{equation}
+O(\theta)=e^{\theta\tau}=\sum_{n=0}^\infty \frac{1}{n!}(\theta\tau)^n,
+\end{equation}
+donde
+\begin{equation}
+\tau=\begin{pmatrix}0 & 1\\
+-1 & 0
+\end{pmatrix}.
+\end{equation}
+Todos los elementos de $O(2)$ son parametrizados por un 'unico 'angulo $\theta$. Decimos que $O(2)$ es un grupo uniparam'etrico, esto es, tiene dimensi'on 1. 
+Consideremos ahora el determinante a ambos lados de la ecuaci'on, es decir
+\begin{equation}
+\det (OO^T)=\det O \det O^T =(\det O)^2=1.
+\end{equation}
+Esto significa que el determinando de $O$ es igual a $\pm 1$. Si tomamos $\det O=1$, el subgrupo resultante es llamado $SO(2)$. Las rotaciones que hemos visto entonces son miembros de $SO(2)$. Sin embargo, si tomamos ahora $\det O=-1$ esto no forman un grupo, puesto que no posee al elemento identidad.
+
+
+\section{Representaciones}
+Si $g_i$ es un miembro de un grupo $G$, entonces el objeto $D(g_i)$ es llamado representaci'on de $G$ si obedece:
+\begin{equation}
+D(g_i)D(g_j)=D(g_ig_j)
+\end{equation}
+para todos los elementos en el grupo. En otras palabras, $D(g_i)$ tiene las mismas reglas de multiplicaci'on  que el grupo original.
+Una representaci'on es llamada reducible si $D(g_i)$ se puede poner en forma diagonal. Por ejemplo, la siguiente matriz es una representaci'on reducible
+\begin{equation}
+D(g_{i})=\begin{pmatrix}D_{1}(g_{i}) & 0 & 0\\
+0 & D_{2}(g_{i}) & 0\\
+0 & 0 & D_{3}(g_{i})
+\end{pmatrix}
+\end{equation}
+donde $D_i$ son representaciones m'as peque\~nas del grupo.
+El principal objetivo es encontrar las representaciones irreducibles de los grupos en cuesti'on. 
+%Esto es porque los campos b'asicos de la f'isica transforman como representaciones irreducibles de los grupos de Lorentz y Poincar'e. 
+En particular, una manera de generar representaciones mayores de $O(2)$ es simplemente multiplicar vectores. El producto $A^iB^j$, por ejemplo, transforma como
+\begin{equation}
+A^{i\prime}B^{j\prime}=\left[O^{i\prime i}(\theta)O^{j\prime j}(\theta)\right]A^iB^j.
+\end{equation}
+Esta matriz $O^{i\prime i}(\theta)O^{j\prime j}(\theta)$ forma una representaci'on de  $SO(2)$. Tiene la misma regla de multiplicaci'on que $O(2)$, pero el espacio sobre el que act'ua es $2\times 2$ dimensional.
+En general, un tensor $T^{ijk\cdots}$ bajo $O(2)$ no es nada en particular pero un objeto que transforma como el producto de una serie de vectores ordinarios.
+La transformacion de $T^{ijk\cdots}$ es id'estica a la transformaci'on del producto $x^ix^jx^k\cdots.$ Este producto forma una representaci'on de $O(2)$ dado que
+\begin{equation}
+O^{i_1,i_2\cdots i_N;j_1,j_2\cdots j_N}(\theta)=O^{i_1,j_1}(\theta)O^{i_2,j_2}(\theta)\cdots O^{i_N,j_N}(\theta)
+\end{equation}
+tiene la misma regla de multipilaci'on que $SO(2)$.
+Un conveniente m'etodo que se usa para crear representaciones irreducibles es usar dos tensores bajo $O(2)$ que son constantes: $\delta^{ij}$ y $\epsilon^{ij}$, donde $\epsilon^{12}=-\epsilon^{21}=1$.
+Podemos mostrar la equivalencia entre $O(2)$ y otra formulaci'on. Tomemos un objeto complejo $u=a+ib$, que transforma de la siguiente manera:
+\begin{equation}
+u^\prime = U(\theta)u=e^{i\theta}u.
+\end{equation}
+La matriz $U(\theta)$ es llamada matriz unitaria, porque
+\begin{equation}
+U\times U^\dagger = \mathbb{I}.
+\end{equation}
+El conjunto de todas las matrices unitarias unidimensionales $U(\theta)=e^{i\theta}$ definen un grupo llamado $U(1)$. Si hacemos dos transformaciones encontramos
+\begin{equation}
+e^{i\theta}e^{i\theta^\prime}=e^{i\theta+i\theta^\prime},
+\end{equation}
+donde tenemos la misma ley de multiplicaci'on que $O(2)$, aunque esta construcci'on es basada en un nuevo espacio, el espacio de n'umeros complejos unidimensionales. Luego decimos que
+\begin{equation}
+SO(2)\sim U(1).
+\end{equation}
+Esto significa que hay una correspondencia entre las dos, aunque ellas est´an definidas en dos diferentes espacios
+\begin{equation}
+e^{\tau(\theta)}\leftrightarrow e^{i\theta}.
+\end{equation}
+Para ver la correspondencia entre $O(2)$ y $U(1)$, consideremos dos campos escalares $\phi_1$ y $\phi_2$ que transforman infinitesimalmente bajo $SO(2)$, es decir
+\begin{equation}
+\delta\phi_i = \theta \epsilon^{ij}\phi_j
+\end{equation}
+lo cual es justamente la regla de transformaci'on para $\theta$ peque\~no. Dado $SO(2) \sim U(1),$ los campos escalares pueden ser combinados dentro de un campo escalar complejo
+\begin{equation}
+\phi =\frac{1}{\sqrt{2}}\left(\phi_1+i\phi_2\right).
+\end{equation}
+Luego la variaci'on infinitesimal de este campo bajo $U(1)$ es dado por
+\begin{equation}
+\delta \phi =-i\theta \phi
+\end{equation}
+para $\theta$ peque\~no.
+
+
+\subsection{Representaciones de $SO(3)$ y $SU(2)$} 
+El grupo $O(2)$ fue f'acil de analizar puesto que sus elementos conmutan entre ellos. A estos grupos los llamamos grupos Abelianos. Ahora repasaremos grupos no-Abelianos, donde los elementos no necesariamente conmutan entre ellos. Definimos $O(3)$ como el grupo que deja la distancia invariante en tres dimensiones, es decir
+\begin{equation}
+\quad \text{Invariante:}\,\,\,\,\,  x^2+y^2+z^2
+\end{equation}
+donde $x^{i\prime}=O^{ij}x^j$. Si repetimos los pasos que hicimos para $SO(2)$, sabemos que el conjunto de matrices $3\times 3$, reales y ortogonales $O(3)$ deja invariante esta cantidad. La condici'on de ortogonalidad reduce el n'umero de n'umeros independientes a $9-3=6$. Cualquier miembro de $O(3)$ puede ser escrito como la exponencial de una matriz antisim'etrica
+\begin{equation}
+O=\exp \left({i\sum_{i=1}^{3}\theta^i \tau^i}\right),
+\end{equation}
+donde $\tau^i$ son elementos puramente imaginarios. As'i hay tres matrices antisim'etricas $3\times 3$ independientes. Por lo tanto $O(3)$ es un grupo de Lie de tres par'ametros, parametrizados por tres ángulos.
+Estas tres matrices antisim'etricas $\tau^i$ pueden ser escritas como:
+\begin{equation}
+\begin{aligned}
+\tau^{1}=-i\begin{pmatrix}0 & 0 & 0\\
+0 & 0 & 1\\
+0 & -1 & 0
+\end{pmatrix};\,\,\,\,\,\,\tau^{2}=-i\begin{pmatrix}0 & 0 & -1\\
+0 & 0 & 0\\
+1 & 0 & 0
+\end{pmatrix}, \\
+\tau^{3}=-i\begin{pmatrix}0 & 1 & 0\\
+-1 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}.
+\end{aligned}
+\end{equation}
+Se puede probar que este conjunto de matrices puede ser representado por el tensor antisim'etrico $\epsilon^{ijk}$ como
+\begin{equation}
+(\tau^i)^{jk}=-i\epsilon^{ijk}
+\end{equation}
+donde $\epsilon^{123}=1$. Estas matrices antisim'etricas, obedecen a la siguiente propiedad:
+\begin{equation}
+[\tau^i,\tau^j]=i\epsilon^{ijk}\tau^k. \label{algebraso3}
+\end{equation}
+Este es un ejemplo de un 'algebra de Lie. Las constantes $\epsilon^{ijk}$ que aparecen en el 'algebra son llamadas constantes de estructura del 'algebra. Una determinaci'on completa de las constantes de estructura de alg'un 'algebra  especifican el 'algebra de Lie, y tambi'en el grupo que est'a por detr'as.
+Para 'angulos peque\~nos $\theta^i$, podemos escribir la ley de transformaci'on como
+\begin{equation}
+\delta x^i=\epsilon^{ijk}\theta^k x^j.
+\end{equation}
+Introduciendo los operadores
+\begin{equation}
+L^i\equiv i\epsilon^{ijk} x^j \partial^k
+\end{equation}
+podemos mostrar que la relaci'on de conmutaci'on de los $L^i$ satisfacen la de $SO(3)$. Construyendo el operador
+\begin{equation}
+U(\theta)=e^{i\theta^i L^i},
+\end{equation}
+un campo escalar y vectorial, transforman como
+\begin{equation}
+\begin{aligned}
+U(\theta^k \phi(x)U^{-1}(\theta^k)&=&\phi(x^\prime), \\
+U(\theta^k \phi^i(x)U^{-1}(\theta^k)&=&\left(O^{-1}\right)^{ij}(\theta^k)\phi^j(x^\prime).
+\end{aligned}
+\end{equation}
+Como en el caso de $O(2),$ podemos encontrar la relaci'on entre $O(3)$ y el grupo unitario. Considerando el conjunto de todas mas matrices unitarias, con determinante 1 de $2\times 2$. Estas matrices forman un grupo, llamado $SU(2)$, el cual es tambi'en llamado el grupo unitario especial en dos dimensiones. Estas matrices tienen 3 elementos independientes. Una matriz unitaria puede ser escrita como la exponencial de una matriz hert'itica $H$, donde $H=H^\dagger$,
+\begin{equation}
+U=e^{iH}.
+\end{equation}
+Para probar esta relaci'on, simplemente tomamos el herm'itico conjugado a ambos lados de la ecuaci'on, es decir
+\begin{equation}
+\begin{aligned}
+U^{\dagger}&=&e^{-iH^{\dagger}} \\
+&=&e^{-iH} \\
+&=&U^{-1}.
+\end{aligned}
+\end{equation}
+Puesto que un elemento de $SU(2)$ puede ser parametrizado por tres n'umeros, el conjunto m'as conveniente es usar las conocidas matrices de Pauli. Cualquier elemento de $SU(2)$ puede ser escrito como
+\begin{equation}
+U=e^{i\theta^i \sigma^i /2},
+\end{equation}
+donde
+\begin{equation}
+\sigma^{1}=\begin{pmatrix}0 & 1\\
+1 & 0
+\end{pmatrix};\,\,\,\sigma^{2}=\begin{pmatrix}0 & -i\\
+i & 0
+\end{pmatrix};\,\,\,\sigma^{3}=\begin{pmatrix}1 & 0\\
+0 & -1
+\end{pmatrix}
+\end{equation}
+donde $\sigma^i$ safisfacen la relaci'on:
+\begin{equation}
+\left[\frac{\sigma^i}{2},\frac{\sigma^j}{2}\right]=i\epsilon^{ijk}\frac{\sigma^k}{2}.
+\end{equation}
+Ahora, tenemos exactamente la misma 'algebra que para $SO(3)$ en la ecuaci'on \eqref{algebraso3}. Por lo tanto, podemos decir que
+\begin{eqnarray}
+SO(3) \sim SU(2).
+\end{eqnarray}
+
+%\section{El Grupo de Poincar'e}
+
+

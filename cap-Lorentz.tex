@@ -1,0 +1,1475 @@
+\chapter{El Grupo de Lorentz}\label{appLor}
+\section{Definici'on y generalidades}
+
+En el contexto de la teor{'i}a Especial de la Relatividad (RE), un punto
+(vector) de la variedad espacio-tiempo ({\em espacio de Minkowski}, $M_{4}$)
+es caracterizado, en un sistema de referencia inercial (SRI) $O$, por las
+coordenadas espacio-temporales cartesianas $x^{\mu
+}=(x^0,x^1,x^2,x^3)=(t,x,y,z)=(t,x^{i})=(t,\vec{x})$.
+
+Una Tranformaci'on de Lorentz (TL) es una transformaci'on lineal, real
+y homog'enea de la forma 
+\begin{equation}
+x^{\mu }\rightarrow \widetilde{x}^{\mu }=\Lambda _{\nu }^{\mu }x^{\nu },
+\label{tl}
+\end{equation}
+o en notaci'on matricial 
+\begin{equation}
+\widetilde{{\bf x}}={\bf \Lambda x,}
+\end{equation}
+tal que la forma cuadRatica 
+\begin{equation}
+s^2=\eta _{\mu \nu }x^{\mu }x^{\nu }=t^2-x^2-y^2-z^2,\qquad \eta
+_{\mu \nu }={\rm diag}(1,-1,-1,-1),  \label{il}
+\end{equation}
+\newline
+permanece invariante. Esto implica que las matrices ${\bf \Lambda }$ deben
+satisfacer la condici'on 
+\begin{equation}
+\eta _{\mu \nu }\Lambda _{\lambda }^{\mu }\Lambda _{\rho }^{\nu }=\eta
+_{\lambda \rho },  \label{indic}
+\end{equation}
+es decir, 
+\begin{equation}
+{\bf \Lambda }^{\top }{\bf \eta \Lambda =\eta }.  \label{condinv}
+\end{equation}
+
+F{\'{\i }}sicamente una TL de la forma (\ref{tl}) representa una
+transformaci'on entre dos SRI's $O\rightarrow \widetilde{O}$ (vinculados
+respectivamente a las coordenadas $x$ y $\widetilde{x}$). La condici'on
+anterior expresa la equivalencia f{\'{\i }}sica de los sistemas de
+referencia $O$ y $\widetilde{O}$ (ppio. de relatividad), y en particular la
+existencia de una simetr{\'{\i }}a fundamental entre las tres dimensiones
+espaciales y la dimensi'on temporal, las cual es manifestada en la
+constancia de la velocidad (rapidez) de la luz en todos los SRI's\footnote{%
+Aqu{\'{\i }} consideramos el sistema ``geometrizado'' de unidades, en el que 
+$c\equiv 1$. ver \cite{MTW}, Cap{\'\i}tulo 1, box 1.8.}. El SRI $\widetilde{O%
+}$ se mueve con {\em velocidad constante} con respecto a $O$. En general,
+los ejes espaciales de $\widetilde{O}$ est'an rotados respecto de $O$.
+Dado que una matriz $\Lambda $ determina totalmente una TL entre SRI's, es
+com'un en la pr'actica identificar matrices y transformaciones.
+
+El ejemplo m'as simple de TL corresponde a los llamados {\em boost},
+donde los ejes espaciales de $\widetilde{O}$ son paralelos a los de $O$,
+es decir no existe una rotaci'on espacial involucrada. La matriz ${\bf %
+\Lambda }$ 
+\begin{equation}
+{\bf \Lambda }=\left( 
+\begin{array}{cccc}
+\gamma  & -\gamma v^1 & -\gamma v^2 & -\gamma v^3 \\ 
+-\gamma v^1 & 1+\frac{(v^1)^2}{\left( v\right) ^2}(\gamma -1) & 
+\frac{v^1v^2}{\left( v\right) ^2}(\gamma -1) & \frac{v^1v^3}{%
+\left( v\right) ^2}(\gamma -1) \\ 
+-\gamma v^2 & \frac{v^1v^2}{\left( v\right) ^2}(\gamma -1) & 1+\frac{%
+(v^2)^2}{\left( v\right) ^2}(\gamma -1) & \frac{v^2v^3}{\left(
+v\right) ^2}(\gamma -1) \\ 
+-\gamma v^3 & \frac{v^1v^3}{\left( v\right) ^2}(\gamma -1) & \frac{%
+v^2v^3}{\left( v\right) ^2}(\gamma -1) & 1+\frac{(v^3)^2}{\left(
+v\right) ^2}(\gamma -1)
+\end{array}
+\right) ,  \label{mb}
+\end{equation}
+donde 
+\begin{equation}
+\gamma =\left[ 1-\left( v\right) ^2\right] ^{-1/2},\qquad v=\sqrt{%
+\vec{v}\cdot \vec{v}}=\sqrt{%
+(v^1)^2+(v^2)^2+(v^3)^2},\qquad \vec{v}=\left(
+v^1,v^2,v^3\right) ,
+\end{equation}
+satisface la condici'on (\ref{condinv}) y conduce a la siguiente
+transformaci'on de coordenadas inerciales 
+\begin{equation}
+\widetilde{\vec{x}}=\vec{x}+\frac{(\gamma -1)}{\left(
+v\right) ^2}\left( \vec{v}\cdot \vec{x}\right) 
+\vec{v}-\gamma \vec{v}t,\qquad \widetilde{t}=\gamma 
+\left[ t-\left( \vec{v}\cdot \vec{x}\right) \right] .
+\end{equation}
+
+Esta TL determina las coordenadas espacio-temporales de un SRI $\widetilde{O}
+$ que se mueve con rapidez (constante) $v$ respecto al SRI $O$, en la
+direcci'on $\widehat{v}=\vec{v}/v$. Una transformaci'on del
+tipo (\ref{mb}) es llamada un {\em boost} {\em en la direcci'on} $%
+\widehat{v}$.
+
+La condici'on (\ref{condinv}) implica que toda TL ${\bf \Lambda }$
+satisface $\left( \det {\bf \Lambda }\right) ^2=1$, de modo que ${\bf %
+\Lambda }$ necesariamente es no-singular y por lo tanto su matriz inversa $%
+{\bf \Lambda }^{-1}$ siempre existe y tambi'en satisface (\ref{condinv}).
+Si ${\bf \Lambda }^{\prime }$ es otra TL entonces el producto matricial $%
+{\bf \Lambda \Lambda }^{\prime }$ tambi'en es una TL. En particular la
+matriz identidad ${\bf 1}={\bf \Lambda }^{-1}{\bf \Lambda }={\bf \Lambda
+\Lambda }^{-1}$ es la TL trivial. Estas propiedades, junto con la
+asociatividad de la multiplicaci'on de matrices, muestran que las
+matrices que satisfacen (\ref{condinv}) {\em forman un grupo} bajo la
+multiplicaci'on matricial: el {\em Grupo de Lorentz }$L=O(1,3)$.
+
+\subsection{Ejemplo: Transformaci'on del campo electromagn'etico}
+
+Un cuadrivector $a^{\mu }$ es, {\em por definici'on}, un objeto que bajo
+una TL, se transforma como 
+\begin{equation}
+a^{\mu }\rightarrow \widetilde{a}^{\mu }=\Lambda _{\nu }^{\mu }a^{\nu }. 
+\end{equation}
+
+An'alogamente, un tensor de segundo rango $a^{\mu \nu }$ se transforma 
+\begin{equation}
+a^{\mu \nu }\rightarrow \widetilde{a}^{\mu \nu }=\Lambda _{\lambda }^{\mu
+}\Lambda _{\rho }^{\nu }a^{\lambda \rho }.  \label{tf}
+\end{equation}
+
+Este es el caso del tensor $F^{\mu \nu }$ que describe el campo electromagn%
+'etico, representado matricialmente por 
+\begin{equation}
+{\bf F}=\left( 
+\begin{array}{cccc}
+0 & -E^1 & -E^2 & -E^3 \\ 
+E^1 & 0 & -B^3 & B^2 \\ 
+E^2 & B^3 & 0 & -B^1 \\ 
+E^3 & -B^2 & B^1 & 0
+\end{array}
+\right) ,
+\end{equation}
+donde $\vec{E}$ es el vector campo el'ectrico y $%
+\vec{B}$ el (pseudo-) vector campo magn'etico\footnote{%
+Note que cuando aqu{'i} hablamos de $\vec{E}$ y $%
+\vec{B}$ como ``(pseudo)vectores'' queremos decir que estos
+objetos transforman (pseudo)vectorialmente {\em respecto a transformaciones
+pertenecientes al (sub)grupo }$O(3)${\em \ de rotaciones}. $\vec{E%
+}$ y $\vec{B}$ {\em no} son vectores respecto a TL.}
+
+Bajo una TL ${\bf F}$ se transforma como 
+\begin{equation}
+\widetilde{{\bf F}}={\bf \Lambda F\Lambda }^{T}. 
+\end{equation}
+
+Usando (\ref{mb}) se encuentra que, bajo un boost, $\vec{E}$ y $%
+\vec{B}$ se transforman como 
+\begin{equation}
+\widetilde{\vec{E}}=\gamma \vec{E}+\gamma \left( 
+\vec{v}\cdot \vec{B}\right) -\frac{(\gamma -1)}{\left(
+v\right) ^2}\left( \vec{v}\cdot \vec{E}\right) 
+\vec{v}
+\end{equation}
+\begin{equation}
+\widetilde{\vec{B}}=\gamma \vec{B}-\gamma \left( 
+\vec{v}\cdot \vec{E}\right) -\frac{(\gamma -1)}{\left(
+v\right) ^2}\left( \vec{v}\cdot \vec{B}\right) 
+\vec{v}.
+\end{equation}
+
+\section{Descomposici'on del GL\label{descom}}
+
+Si en (\ref{indic}) se hace $\lambda =\rho =0$, se obtiene que 
+\begin{equation}
+\left( \Lambda _{0}^0\right) ^2-\sum_{i=1}^3\left( \Lambda
+_{0}^{i}\right) ^2=1, 
+\end{equation}
+de modo que 
+\begin{equation}
+\left( \Lambda _{0}^0\right) ^2=1+\sum_{i=1}^3\left( \Lambda
+_{0}^{i}\right) ^2\geq 1.  \label{mayor}
+\end{equation}
+
+La ec. (\ref{mayor}) y el hecho que $\left( \det {\bf \Lambda }\right)
+^2=1 $ implican que el {\em grupo completo de Lorentz} 
+\begin{equation}
+L=O(1,3)=\left\{ {\bf \Lambda }\in {\cal M}_{4\times 4}(R)\quad /\quad {\bf %
+\Lambda }^{\top }{\bf \eta \Lambda =\eta }\right\} , 
+\end{equation}
+puede ser descompuesto en cuatro subconjuntos disconexos\footnote{%
+Es decir, que no es posible conectar dos elementos cualesquiera de dos de
+estos subconjuntos a trav'es de una curva continua en el espacio de los
+elementos de $L$.}:
+
+\begin{enumerate}
+\item  Transformaciones de Lorentz {\em propias ortocronas} 
+\begin{equation}
+L_{+}^{\uparrow }=\left\{ {\bf \Lambda }\in O(1,3)\quad /\quad \Lambda
+_{0}^0\geq 1,\quad \det {\bf \Lambda }=1\right\} .
+\end{equation}
+
+\item  Transformaciones de Lorentz {\em impropias ortocronas} 
+\begin{equation}
+L_{-}^{\uparrow }=\left\{ {\bf \Lambda }\in O(1,3)\quad /\quad \Lambda
+_{0}^0\geq 1,\quad \det {\bf \Lambda }=-1\right\} .
+\end{equation}
+
+\item  Transformaciones de Lorentz {\em propias no ortocronas} 
+\begin{equation}
+L_{+}^{\downarrow }=\left\{ {\bf \Lambda }\in O(1,3)\quad /\quad \Lambda
+_{0}^0\leq -1,\quad \det {\bf \Lambda }=1\right\} .
+\end{equation}
+
+\item  Transformaciones de Lorentz {\em impropias no ortocronas} 
+\begin{equation}
+L_{-}^{\downarrow }=\left\{ {\bf \Lambda }\in O(1,3)\quad /\quad \Lambda
+_{0}^0\leq -1,\quad \det {\bf \Lambda }=-1\right\} .
+\end{equation}
+\end{enumerate}
+
+Es 'util definir las TL's {\em propias}, $L_{+}=SO(1,3)=L_{+}^{\uparrow
+}\cup L_{+}^{\downarrow }$; las transformaciones {\em impropias}, $%
+L_{-}=L_{-}^{\uparrow }\cup L_{-}^{\downarrow }$; las transformaciones {\em %
+ortocronas}, $L^{\uparrow }=L_{-}^{\uparrow }\cup L_{+}^{\uparrow }$; y las
+transformaciones {\em no ortocronas}, $L^{\downarrow }=L_{-}^{\downarrow
+}\cup L_{+}^{\downarrow }.$
+
+$L_{-}$ y $L^{\downarrow }$ no constituyen grupos puesto que no contienen a
+la identidad. Por el contrario, es f'acil verificar que $L_{+}$ y $%
+L^{\uparrow }$ s{\'{\i }} forman grupos, que son subgrupos de $L=O(1,3)$.
+Estos grupos reciben el nombre de {\em Grupo de Lorentz Propio} ($L_{+}$) y
+{\em Grupo de Lorentz Ortocrono} ($L^{\uparrow }$). Finalmente $%
+L_{+}^{\uparrow }$, la componente conexa del GL, define el {\em Grupo
+Restringuido de Lorentz} (GL propio ortocrono), el cual es un {\em grupo de
+Lie}\footnote{%
+ver \cite{Gilmore}, Cap{\'\i}tulo 3.}.
+
+La reflexi'on espacial (paridad) $x^{i}\rightarrow \widetilde{x}%
+^{i}=-x^{i}$, $t\rightarrow \widetilde{t}=t$, que corresponde a una matriz $%
+{\bf I}_{s}=diag(1,-1,-1,-1)$, es una TL impropia ortocrona, es decir ${\bf I}%
+_{s}\in L_{-}^{\uparrow }$. An'alogamente la inversi'on temporal ${\bf %
+I}_{t}=diag(-1,1,1,1)$ es una TL impropia no ortocrona, es decir ${\bf I}_{t}\in
+L_{-}^{\downarrow }$. Es directo verificar que el elemento ${\bf I}_{st}=%
+{\bf I}_{s}{\bf I}_{t}{\bf =I}_{t}{\bf I}_{s}\in L_{+}^{\downarrow }$.
+
+Estos elementos, junto con la identidad, forman un subgrupo discreto
+abeliano $R$ del GL. Este subgrupo $R$ es usualmente llamado {\em el grupo
+de reflexiones espaciales y temporales}. En nuestro caso este grupo discreto
+resulta ser el grupo factor $L/L_{+}^{\uparrow }$, obtenido a partir del
+grupo de Lorentz $L$ y su parte conexa\footnote{Recu�rdese que en general,
+el grupo factor de un grupo continuo $G$ por
+su componente conexa $G_{0}$ es un {\em grupo discreto }${\mathit D=G/G}_{0}$.
+ver \cite{Gilmore}, Cap�tulo 3.} $L_{+}^{\uparrow }$. Esto es una
+manifestaci'on de la propiedad que permite descomponer un elemento
+cualquiera de $L$ como la composici'on de un elemento perteneciente a $R$
+y un elemento del grupo restringido $L_{+}^{\uparrow }$.
+
+El subgrupo discreto $R$ queda definido por 
+\begin{equation}
+R=L/L_{+}^{\uparrow }=\left\{ {\bf 1},{\bf I}_{s},{\bf I}_{t},{\bf I}%
+_{st}\right\} , 
+\end{equation}
+de modo que una transformaci'on ${\bf \Lambda }\in L$ puede siempre
+escribirse como 
+\begin{equation}
+{\bf \Lambda }={\bf r}\cdot {\bf \Lambda }_{+}^{\uparrow }, 
+\end{equation}
+con apropiados elementos ${\bf r}\in R$ y ${\bf \Lambda }_{+}^{\uparrow }\in
+L_{+}^{\uparrow }$.
+
+Esto permite estudiar las propiedades del GL, analizando primero su parte
+conexa $L_{+}^{\uparrow }$, a trav'es de su 'algebra $so(1,3)$, y
+luego el grupo de reflexiones espaciales y temporales.
+
+\section{Generadores y 'algebra $so(1,3)$\label{gene}}
+
+La transformaci'on infinitesimal
+
+\begin{equation}
+{\bf \Lambda }={\bf 1+A},\qquad {\bf A}^2\approx {\bf 0}, 
+\end{equation}
+donde ${\bf A}$ satisface, de acuerdo con (\ref{condinv}), la condici'on 
+\begin{equation}
+({\bf \eta A})^{\top }+{\bf \eta A}={\bf 0,}  \label{anti1}
+\end{equation}
+implica que el 'algebra de Lie $so(1,3)$ es definida por 
+\begin{equation}
+so(1,3)=\left\{ {\bf A}\in {\cal M}_{4\times 4}(R)\quad /\quad ({\bf \eta A}%
+)^{\top }+{\bf \eta A}={\bf 0}\right\} .  \label{alg}
+\end{equation}
+
+De (\ref{anti1}) se ve que la matriz ${\bf M\equiv \eta A}$ es
+antisim'etrica, lo cual significa que una TL (propia ortocrona) queda
+determinada por seis par'ametros independientes\footnote{${\bf A\equiv
+\eta M}$, con ${\bf M}=$ matriz $4\times 4$ antisim'etrica y, por lo
+tanto, con 6 elementos independientes.} de modo que el 'algebra del grupo
+de Lorentz (AL) tiene dimensi'on 6, es decir, tiene 6 generadores. Por esto,
+un elemento cualquiera de $so(1,3)$ es de la forma 
+\begin{equation}
+{\bf A=}\left( 
+\begin{array}{cccc}
+0 & \varepsilon ^{4} & \varepsilon ^{5} & \varepsilon ^{6} \\ 
+\varepsilon ^{4} & 0 & -\varepsilon ^3 & \varepsilon ^2 \\ 
+\varepsilon ^{5} & \varepsilon ^3 & 0 & -\varepsilon ^1 \\ 
+\varepsilon ^{6} & -\varepsilon ^2 & \varepsilon ^1 & 0
+\end{array}
+\right) , 
+\end{equation}
+lo cual permite escribir una transformaci'on infinitesimal como\footnote{%
+El factor $i$ se ha introducido por conveniencia.} 
+\begin{equation}
+\Lambda _{\nu }^{\mu }=\delta _{\nu }^{\mu }-i\varepsilon ^{\alpha }\left(
+T_{\alpha }\right) _{\nu }^{\mu },\qquad \alpha =1,\ldots ,6 
+\end{equation}
+o matricialmente 
+\begin{equation}
+{\bf \Lambda =1}-i\varepsilon ^{\alpha }{\bf T}_{\alpha },\qquad \alpha
+=1,\ldots ,6 
+\end{equation}
+donde $\varepsilon ^{\alpha }$ ($\alpha =1,\ldots ,6$) son los
+par'ametros infinitesimales reales que determinan la TL y $\left(
+T_{\alpha }\right) _{\nu }^{\mu }$ ('o ${\bf T}_{\alpha }$) son los
+correspondientes generadores\footnote{%
+Es usual en la literatura denotar los par'ametros por $\varepsilon
+^{\lambda \rho }=-\varepsilon ^{\rho \lambda }$ y los generadores por $%
+\left( T_{\lambda \rho }\right) _{\nu }^{\mu }=-\left( T_{\rho \lambda
+}\right) _{\nu }^{\mu }$, de modo que la TL infinitesimal viene dada por $%
+\Lambda _{\nu }^{\mu }=\delta _{\nu }^{\mu }-\frac{i}{2}\varepsilon
+^{\lambda \rho }\left( T_{\lambda \rho }\right) _{\nu }^{\mu }$, donde $%
+\left( T_{\lambda \rho }\right) _{\nu }^{\mu }=i\left[ \eta _{\rho \nu
+}\delta _{\lambda }^{\mu }-\eta _{\lambda \nu }\delta _{\rho }^{\mu }\right] 
+$. En esta notaci'on el 'algebra de Lie es de la forma $\left[ {\bf T}%
+_{\mu \nu },{\bf T}_{\lambda \rho }\right] =-i\left( \eta _{\mu \lambda }%
+{\bf T}_{\nu \rho }+\cdots \right) $ y los generadores de rotaciones y
+boosts vienen dados por ${\bf J}^{i}=-\frac{1}{2}\epsilon ^{ijk}{\bf T}^{jk}$%
+, ${\bf K}^{i}={\bf T}^{io}$. Sin embargo, esta notaci'on tiene el
+inconveniente que induce al error de considerar la cantidad $\varepsilon
+^{\lambda \rho }$ como un tensor de segundo rango antisim'etrico.
+Recu'erdese que en este contexto la definici'on de tensor depende
+justamente de las propiedades de transformaci'on de un objeto bajo TL's,
+por lo que no es consistente aplicar esta definici'on a un objeto que,
+precisamente, es usado para determinar las TL's. Por esto, aqu{\'{\i }}
+introduciremos una notaci'on alternativa que es m'as ventajosa para
+nuestros prop'ositos, pues permite visualizar m'as claramente la
+estructura de las teor{\'{\i }}as que nos ocupan. Es 'util, sin embargo,
+definir las ${\bf T}^{\mu \nu }$ como cantidades secundarias en algunos
+c'alculos pr'acticos.}, los cuales
+vienen dados por 
+\begin{equation}
+{\bf T}_{1}=\left( 
+\begin{array}{cccc}
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & -i \\ 
+0 & 0 & i & 0
+\end{array}
+\right) ,\qquad {\bf T}_{1}=\left( 
+\begin{array}{cccc}
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & i \\ 
+0 & 0 & 0 & 0 \\ 
+0 & -i & 0 & 0
+\end{array}
+\right) ,\qquad {\bf T}_{3}=\left( 
+\begin{array}{cccc}
+0 & 0 & 0 & 0 \\ 
+0 & 0 & -i & 0 \\ 
+0 & i & 0 & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}
+\right) ,  \label{d1}
+\end{equation}
+\begin{equation}
+{\bf T}_{4}=\left( 
+\begin{array}{cccc}
+0 & i & 0 & 0 \\ 
+i & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}
+\right) ,\qquad {\bf T}_{5}=\left( 
+\begin{array}{cccc}
+0 & 0 & i & 0 \\ 
+0 & 0 & 0 & 0 \\ 
+i & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}
+\right) ,\qquad {\bf T}_{6}=\left( 
+\begin{array}{cccc}
+0 & 0 & 0 & i \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 
+i & 0 & 0 & 0
+\end{array}
+\right) ,  \label{d2}
+\end{equation}
+de modo que 
+\begin{equation}
+{\bf J}^{i}={\bf T}_{i},\qquad {\bf K}^{i}={\bf T}_{i+3},\qquad i=1,2,3, 
+\end{equation}
+donde $\vec{{\bf J}}$son los generadores de rotaciones y $%
+\vec{{\bf K}}$ los de Boosts. As{\'{\i }}, las matrices ${\bf J}%
+^{i}$ son herm{\'{\i }}ticas y las ${\bf K}^{i}$ antiherm{\'{\i }}ticas.
+
+Estos resultados permiten verificar que los generadores del AL satisfacen
+las relaciones de conmutaci'on 
+\begin{eqnarray}
+\left[ {\bf J}^{i},{\bf J}^{j}\right] &=&i\epsilon ^{ijk}{\bf J}^{k},
+\label{allor1} \\
+\left[ {\bf J}^{i},{\bf K}^{j}\right] &=&i\epsilon ^{ijk}{\bf K}^{k},
+\label{allor2} \\
+\left[ {\bf K}^{i},{\bf K}^{j}\right] &=&-i\epsilon ^{ijk}{\bf J}^{k},
+\label{allor3}
+\end{eqnarray}
+y que una TL propia ortocrona arbitraria ${\bf \Lambda }_{+}^{\uparrow }$,
+adopta la forma 
+\begin{equation}
+{\bf \Lambda }_{+}^{\uparrow }=\exp \left( -i\varepsilon ^{\alpha }{\bf T}%
+_{\alpha }\right) ,  \label{exp}
+\end{equation}
+donde ahora los par'ametros $\varepsilon ^{\alpha }$ no son
+necesariamente infinitesimales, es decir, la transformaci'on puede ser
+finita. Por ejemplo, la transformaci'on (\ref{mb}) es obtenida haciendo $%
+\varepsilon ^{i}=0$, $\varepsilon ^{i+3}=-\phi \widehat{v}^{i}$, con $\tanh
+\phi=v$.
+
+\section{Representaciones del GL\label{reppro}}
+
+\subsection{Generalidades}
+
+A conticuaci'on se presentar'an algunos elementos b'asicos
+necesarios para construir las representaciones irreducibles {\em %
+finito-dimensionales projectivas} del GL, las cuales ser'an de utililidad
+en la descripci'on de las propiedades de transformaci'on de {\em campos%
+} de materia. Una discusi'on acerca de las representaciones de
+dimensi'on infinita (p.ej. unitarias), 'utiles en la descripci'on
+de {\em estados de campos cu'anticos}, puede encontrarse en \cite
+{BS,Cornwell}.
+
+Una representaci'on de un grupo $G$ es una realizaci'on de la ley de
+multiplicaci'on abstracta que define $G$, por medio de operadores, tales
+como matrices u operadores diferenciales, que act'uan sobre alg'un
+espacio vectorial de dimensi'on finita o infinita. En el caso del GL una 
+{\em representaci'on finito-dimensional} puede expresarse a trav'es de
+matrices que satisfacen la correspondiente regla de composici'on. En este
+caso, a cada matriz ${\bf \Lambda }\in L$ le corresponde una matriz, que se
+denotar'a por ${\bf S}({\bf \Lambda })$, tal que satisfacen la misma
+regla de multiplicaci'on que las matrices ${\bf \Lambda }$. Si ${\bf %
+\Lambda }_{1}$ y ${\bf \Lambda }_{2}$ son dos matrices que satisfacen (\ref
+{condinv}), entonces las matrices ${\bf S(\Lambda )}$ constituyen una
+representaci'on del GL si 
+\begin{equation}
+{\bf S}({\bf \Lambda }_{1}){\bf S}({\bf \Lambda }_{2})={\bf S}({\bf \Lambda }%
+_{1}{\bf \Lambda }_{2}).  \label{repver}
+\end{equation}
+
+En Mec'anica Cu'antica Relativista (MCR), son adem'as de importancia, las {\em %
+representaciones proyectivas}, es decir, representaciones salvo una fase. Las
+matrices ${\bf S}$ constituyen una representaci'on proyectiva del GL si
+satisfacen una regla de multiplicaci'on de la forma 
+\begin{equation}
+{\bf S}({\bf \Lambda }_{1}){\bf S}({\bf \Lambda }_{2})=e^{i\varphi ({\bf %
+\Lambda }_{1},{\bf \Lambda }_{2})}{\bf S}({\bf \Lambda }_{1}{\bf \Lambda }%
+_{2}),  \label{repproy}
+\end{equation}
+donde $\varphi ({\bf \Lambda }_{1},{\bf \Lambda }_{2})$ es alguna fase
+(real) que puede depender en general de las transformaciones involucradas. As%
+{\'{\i }} (\ref{repver}) es un caso particular de (\ref{repproy}).
+Usualmente las matrices que satisfacen (\ref{repver}) son llamadas {\em %
+representaciones univaluadas o verdaderas}, para diferenciarlas de las {\em %
+representaciones proyectivas}$,$ que son entendidas como aquellas en que $%
+\varphi \neq 0$.
+
+\subsection{Representaciones Proyectivas de $L_{+}^{\uparrow }$}
+
+Es un hecho conocido que no existe una relaci'on uno a uno entre grupos y
+'algebras de Lie \cite{Gilmore}, debido a que grupos de Lie distintos
+(p.ej. $SU(2)$ y $SO(3)$) pueden poseer la misma 'algebra\footnote{%
+El 'algebra de Lie s'olo contiene informaci'on de las propiedades 
+{\em locales} del Grupo.}. Sin embargo, al considerar representaciones
+proyectivas de $L_{+}^{\uparrow }$ se simplifica en alguna medida el
+trabajo, debido a que existe una relaci'on uno a uno\footnote{%
+Por medio de exponenciaci'on, ver (\ref{exp}).} entre una 'algebra de
+Lie y el correspondiente {\bf grupo covertor universal}\footnote{%
+El grupo covertor universal de un grupo $G$ es el ('unico) grupo, que
+tiene asociada la misma 'algebra que $G$, y es simplemente conexo \cite
+{Gilmore}.} y, a su vez, entre las representaciones univaluadas del grupo
+covertor y las representaciones proyectivas del grupo original.
+
+En nuestro caso, el GL no es simplemente conexo\footnote{%
+El subgrupo de rotaciones no es simplemente conexo, es doblemente conexo.
+ver \cite{Ham}, cap'itulo 9.} y el grupo covertor universal de $%
+L_{+}^{\uparrow }$ es $SL(2,C)$. Por lo tanto, al exponenciar {\bf %
+representaciones del 'algebra de Lorentz} ($so(1,3)=sl(2,C)$) {\em no }se
+obtienen en general representaciones univaluadas de $L_{+}^{\uparrow }$ sino
+de $SL(2,C)$. Sin embargo, los objetos resultantes constituyen {\em %
+representaciones proyectivas} de $L_{+}^{\uparrow }$, que son justamente las
+que nos interesan. As\'{\i },\ el trabajo se reduce a construir
+representaciones del {\em 'algebra} de Lorentz.
+
+\subsection{El grupo $SL(2,C)$}
+
+El grupo de Lie especial lineal bidimensional con par'ametros complejos, $%
+SL(2,C)$, es definido como: 
+\begin{equation}
+SL(2,C)=\left\{ {\bf M}\in {\cal M}_{2\times 2}(C)\quad /\quad \det ({\bf M}%
+)=1\right\} . 
+\end{equation}
+
+Una matriz ${\bf M}\in SL(2,C)$ puede ser escrita como 
+\begin{eqnarray*}
+{\bf M} &=&\left( 
+\begin{array}{cc}
+p_{0}+p_{3} & p_{1}+ip_{2} \\ 
+p_{1}-ip_{2} & p_{0}-p_{3}
+\end{array}
+\right) \\
+&=&p_{0}\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & 1
+\end{array}
+\right) +p_{1}\left( 
+\begin{array}{cc}
+0 & 1 \\ 
+1 & 0
+\end{array}
+\right) +p_{2}\left( 
+\begin{array}{cc}
+0 & i \\ 
+-i & 0
+\end{array}
+\right) +p_{3}\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & -1
+\end{array}
+\right) \\
+&=&p_{0}{\bf 1}_{2}+p_{i}{\bf \sigma }^{i},
+\end{eqnarray*}
+donde ${\bf 1}_{2}$ es la matriz identidad bidimensional y ${\bf \sigma }^{i}
+$ las matrices de Pauli. Los par'ametros $p$ son n'umeros complejos
+que satisfacen la condici'on $\det ({\bf M}%
+)=p_{0}^2-p_{1}^2-p_{2}^2-p_{3}^2=1$. Esto reduce a tres los
+par'ametros complejos independientes que parametrizan una matriz de $%
+SL(2,C)$.
+
+Una matriz ${\bf M}\in SL(2,C)$ {\em que difiere infinitesimalmente de la
+identidad} queda definida por tres par'ametros complejos infinitesimales
+o, equivalentemente, por seis par'ametros infinitesimales reales. Esto
+permite escribir 
+\begin{equation}
+{\bf M}={\bf 1}+p_{i}{\bf \sigma }^{i}={\bf 1}-i\varepsilon _{i}\left[ \frac{%
+{\bf \sigma }^{i}}{2}\right] -i\varepsilon _{i+3}\left[ i\frac{{\bf \sigma }%
+^{i}}{2}\right] ={\bf 1}-i\varepsilon ^{\alpha }{\bf L}_{\alpha },\qquad
+\alpha =1,\ldots ,6, 
+\end{equation}
+donde ahora los par'ametros $p_{i}=\frac{1}{2}(\varepsilon
+_{i+3}-i\varepsilon _{i})$ son infinitesimales y los $\varepsilon ^{\alpha }$
+($\alpha =1,\ldots ,6$) son reales. Adem'as 
+\begin{equation}
+{\bf L}_{i}=\frac{{\bf \sigma }^{i}}{2}={\bf j}^{i},\qquad {\bf L}_{i+3}=i%
+\frac{{\bf \sigma }^{i}}{2}={\bf k}^{i},  \label{gensl2c}
+\end{equation}
+son los generadores ${\bf L}_{\alpha }$ del 'algebra $sl(2,C)$, y
+satisfacen la misma 'algebra que los operadores de rotaciones (${\bf J}%
+^{i}$) y boosts (${\bf K}^{i}$) derivados en la secci'on \ref{gene}%
+\footnote{%
+y, como se veRa en la secci'on \ref{reps}, corresponden a la
+representaci'on $(0,\frac{1}{2})$.}. Por lo tanto, los grupos de Lie $%
+L_{+}^{\uparrow }$ y $SL(2,C)$ poseen la misma 'algebra de Lie, es decir $%
+so(1,3)=sl(2,C)$. Sin embargo, el $L_{+}^{\uparrow }$ no es simplemente
+conexo mientras que $SL(2,C)$ si lo es, y por lo tanto $SL(2,C)$ es el grupo
+covertor universal de $L_{+}^{\uparrow }$. La construcci'on de elementos
+finitos por medio de la exponenciaci'on de representaciones de elementos
+del 'algebra de Lie $so(1,3)$ suministra representaciones del grupo $%
+SL(2,C)$ que, en general, constituyen representaciones proyectivas de $%
+L_{+}^{\uparrow }$.
+
+Dado que $L_{+}^{\uparrow }$ y $SL(2,C)$ tienen la misma 'algebra de Lie,
+ellos poseen la mismas propiedades {\em locales}\footnote{%
+es decir, propiedades que involucran la composici'on de elementos cercanos a
+la identidad.}. Sin embargo, las propiedades de globales de composici'on
+no son las mismas. Estas caracter{\'{\i }}sticas pueden ejemplificarse
+estudiando el comportamiento de ``rotaciones en torno del eje 3'', para TL's
+y elementos de $SL(2,C)$.
+
+Usando la matriz correspondiente al generador ${\bf J}^3$ en (\ref{d1}) es
+directo verificar que una ``rotaci'on en un 'angulo de $2\pi $ en
+torno de eje $3$'' es equivalente a la rotaci'on trivial, es decir 
+\begin{equation}
+{\bf \Lambda }=\exp (-i2\pi {\bf J}^3)={\bf 1}_{4}\in L_{+}^{\uparrow }. 
+\end{equation}
+
+Sin embargo, no ocurre lo mismo con elementos de $SL(2,C)$ ya que 
+\begin{equation}
+{\bf M}=\exp (-i2\pi {\bf j}^3)=\exp (-i\pi {\bf \sigma }^3)=-{\bf 1}%
+_{2}\in SL(2,C). 
+\end{equation}
+
+As{\'{\i }}, es necesario que los par'ametros asociados a los generadores 
+${\bf j}^{i}$ (``rotaciones'') var{\'{\i }}en en el intervalo $[0,4\pi ]$
+para cubrir completamente los elementos de $SL(2,C)$. Mientras $%
+L_{+}^{\uparrow }$ asocia a los 'angulos de rotaci'on $\theta $ y $%
+\theta +2\pi $ el mismo elemento, el grupo $SL(2,C)$ les asocia elementos
+distintos. Por esto, existe en general un \textit{mapeo dos a uno} (homomorfismo)
+entre elementos de $SL(2,C)$ y elementos de $L_{+}^{\uparrow }$. A cada
+elemento de $L_{+}^{\uparrow }$ le corresponden {\em dos} elementos de $%
+SL(2,C)$: si ${\bf M}$ $\in SL(2,C)$ est'a asociado a ${\bf \Lambda }\in
+L_{+}^{\uparrow }$ entonces $\left( -{\bf M}\right) $ $\in SL(2,C)$
+tambi'en lo est'a. En el ejemplo anterior ${\bf M}={\bf 1}_{2}$ y $%
+{\bf \Lambda }={\bf 1}_{4}$. Es f'acil ver que, debido a este
+comportamiento, aunque las matrices en (\ref{gensl2c}) constituyen una {\em %
+representaci'on del 'algebra} de $L_{+}^{\uparrow }$, las matrices
+finitas construidas por exponenciaci'on de los generadores {\em no
+constituyen una representaci'on de }$L_{+}^{\uparrow }$: en efecto, $%
+e^{-i\pi {\bf j}^3}e^{-i\pi {\bf j}^3}=-{\bf 1}_{2}$, y una
+representaci'on requiere una ley de multiplicaci'on de la forma $%
+e^{-i\pi {\bf J}^3}e^{-i\pi {\bf J}^3}={\bf 1}$. Sin embargo, las
+matrices as{\'{\i }} encontradas constituyen una {\em representaci'on
+proyectiva de }$L_{+}^{\uparrow }$.
+
+El grupo $L_{+}^{\uparrow }$ puede pensarse \cite{Gilmore} como el grupo
+factor 
+\begin{equation}
+L_{+}^{\uparrow }=SL(2,C)/D, 
+\end{equation}
+donde $D$ es el {\em centro}\footnote{%
+E.d., el conjunto de elementos que conmutan con todos los elementos del
+grupo.} de $SL(2,C)$, que en nuestro caso est'a formado por los elementos
+de $SL(2,C)$ asociados a la TL identidad, es decir, $D=\left\{ {\bf 1,-1}%
+\right\} =Z_{2}$.
+
+\subsection{Representaciones irreducibles finito-dimensionales
+del 'algebra de Lorentz\label{rifdal}}
+
+Una representaci'on matricial del AL $so(1,3)=sl(2,C)$, queda definida
+por las matrices\footnote{%
+Aqu{\'\i} denotamos los operadores ``abstractos'' (es decir no vinculados a
+alguna representaci'on particular) por $J^{i}$ y $K^{i}$, mientras que
+las correspondientes {\em matrices}, en una representaci'on
+finito-dimensional dada, son denotadas por letras en negrita (p.ej. ${\bf J}%
+^{i}$ y ${\bf K}^{i}$, 'o ${\bf j}^{i}$ y ${\bf k}^{i}$).} ${\bf J}^{i}$
+y ${\bf K}^{i}$, $i=1,2,3$ que satisfacen las relaciones de conmutaci'on (%
+\ref{allor1})-(\ref{allor3}). Si se introducen las combinaciones lineales
+con coeficientes complejos 
+\begin{equation}
+{\bf X}^{i}\equiv \frac{1}{2}\left( {\bf J}^{i}+i{\bf K}^{i}\right) ,\qquad 
+{\bf Y}^{i}\equiv \frac{1}{2}\left( {\bf J}^{i}-i{\bf K}^{i}\right) ,
+\label{defxy}
+\end{equation}
+entonces (\ref{allor1})-(\ref{allor3}) implican que 
+\begin{equation}
+\left[ {\bf X}^{i},{\bf X}^{j}\right] =i\epsilon ^{ijk}{\bf X}^{k},\qquad 
+\left[ {\bf Y}^{i},{\bf Y}^{j}\right] =i\epsilon ^{ijk}{\bf Y}^{k}, 
+\end{equation}
+\begin{equation}
+\left[ {\bf X}^{i},{\bf Y}^{j}\right] =0. 
+\end{equation}
+
+Es decir, ${\bf X}^{i}$ e ${\bf Y}^{i}$ satisfacen el 'algebra $%
+su(2)\oplus su(2)$. Esto permite construir representaciones irreducibles del
+'algebra $so(1,3)$ a partir de productos directos de las bien conocidas
+representaciones del 'algebra $su(2)$. Las representaciones irreducibles
+construidas en esta forma quedan determinadas por los valores que asumen los
+operadores de Casimir de cada 'algebra $su(2)$.
+
+Consid'erese una representaci'on irreducible del 'algebra $su(2)$,
+que seRa asociada a los operadores $X^{i}$. Las representaciones
+irreducibles {\em finito-dimensionales} de $su(2)$ son herm{\'{\i }}ticas%
+\footnote{$SU(2)$ es compacto.} y quedan determinadas por un n'umero $j$
+que puede asumir valores {\em enteros o semienteros} $j=0,\frac{1}{2},1,%
+\frac{3}{2},\ldots $. La representaci'on resultante, que se denotar'a
+por $D_{X}^{(j)}$, es de dimensi'on $(2j+1)$ y el correspondiente espacio
+de representaci'on es generado por la base $\left| j,m\right\rangle _{X}$%
+, donde $m$ asume los valores $m=-j,-j+1,\ldots ,j-1,j$. Las matrices ${\bf x%
+}^{i}$ quedan entonces definidas por: 
+\begin{equation}
+x_{(\pm )\widetilde{m}m}=\delta _{\widetilde{m},m\pm 1}\sqrt{\left( j\mp
+m\right) \left( j\pm m+1\right) },\qquad x_{\widetilde{m}m}^3=m\delta _{%
+\widetilde{m},m},  \label{x1}
+\end{equation}
+\begin{equation}
+x_{\widetilde{m}m}^{i}=\left\langle j,\widetilde{m}\right| x^{i}\left|
+j,m\right\rangle ,\qquad {\bf X}_{\pm }={\bf X}^1\pm i{\bf X}^2.
+\label{x2}
+\end{equation}
+
+De la misma forma, es posible construir representaciones $D_{Y}^{(j^{\prime
+})}$de dimensi'on $(2j^{\prime }+1)$ asociadas a los operadores $Y^{i}$,
+de modo que la base del espacio de representaci'on viene dada por $\left|
+j^{\prime },m^{\prime }\right\rangle _{Y}$, $m^{\prime }=-j^{\prime
+},-j^{\prime }+1,\ldots ,j^{\prime }-1,j^{\prime }$. Consecuentemente, las
+matrices ${\bf y}^{i}$ quedan definidas por 
+\begin{equation}
+y_{(\pm )\widetilde{m}^{\prime }m^{\prime }}=\delta _{\widetilde{m}^{\prime
+},m^{\prime }\pm 1}\sqrt{\left( j^{\prime }\mp m^{\prime }\right) \left(
+j^{\prime }\pm m^{\prime }+1\right) },\qquad y_{\widetilde{m}^{\prime
+}m^{\prime }}^3=m^{\prime }\delta _{\widetilde{m}^{\prime },m^{\prime }},
+\label{y1}
+\end{equation}
+\begin{equation}
+y_{\widetilde{m}^{\prime }m}^{i}=\left\langle j^{\prime },\widetilde{m}%
+^{\prime }\right| y^{i}\left| j^{\prime },m^{\prime }\right\rangle ,\qquad 
+{\bf Y}_{\pm }={\bf Y}^1\pm i{\bf Y}^2.  \label{y2}
+\end{equation}
+
+Recu'erdese, por 'ultimo, que los operadores de Casimir de las
+representaciones matriciales finito-dimensionales de $su(2)$ as{\'\i}
+construidas son 
+\begin{equation}
+\left( {\bf x}\right) ^2={\bf x}^{i}{\bf x}^{i}=j(j+1){\bf 1},\qquad
+\left( {\bf y}\right) ^2={\bf y}^{i}{\bf y}^{i}=j^{\prime }(j^{\prime }+1)%
+{\bf 1}. 
+\end{equation}
+
+A partir de estos objetos es posible construir las matrices ${\bf X}^{i}$ e $%
+{\bf Y}^{i}$ correspondientes a una representaci'on irreducible del
+'algebra $so(1,3)$, denotada por $(j,j^{\prime })$. Estos operadores
+deben satisfacer 'algebras $su(2)$ mutuamente conmutantes. Esto permite
+construir las respectivas matrices de manera similar al usual procedimiento
+de ``suma de momenta angulares''. Esto significa que el espacio
+correspondiente a la representaci'on $(j,j^{\prime })$ de $so(1,3)$ tiene
+como vectores base a 
+\begin{equation}
+\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+mm^{\prime }
+\end{array}
+\right\rangle =\left| j,m\right\rangle _{X}\otimes \left| j^{\prime
+},m^{\prime }\right\rangle _{Y}, 
+\end{equation}
+y las matrices ${\bf X}^{i}$ e ${\bf Y}^{i}$ vienen dadas por 
+\begin{equation}
+{\bf X}^{i}={\bf x}^{i}\otimes {\bf 1},\qquad {\bf Y}^{i}={\bf 1}\otimes 
+{\bf y}^{i}.  \label{mayus}
+\end{equation}
+
+Por lo tanto, la representaci'on $(j,j^{\prime })$ es de dimensi'on $%
+(2j+1)(2j^{\prime }+1)$. Finalmente, las matrices del 'algebra de Lorentz
+buscadas, se calculan usando 
+\begin{equation}
+{\bf J}^{i}={\bf X}^{i}+{\bf Y}^{i},\qquad {\bf K}^{i}=i\left( {\bf Y}^{i}-%
+{\bf X}^{i}\right) ,  \label{lk}
+\end{equation}
+lo que implica que en una representaci'on irreducible finito-dimensional $%
+(j,j^{\prime })$ {\em las matrices de momentum angular son herm{\'\i}ticas},
+mientras que {\em las matrices de boost son antiherm{\'\i}ticas}\footnote{%
+El GL {\em no es compacto}. Esta propiedad es intuitivamente clara debido a
+que la composici'on de boosts en una misma direcci'on y sentido es
+equivalente a un boost con una velocidad resultante mayor (obtenida por la
+expresi'on de adici'on relativista de velocidades). As{\'\i}, la
+composici'on sucesiva de estos boosts converge a un ``boost con velocidad
+de la luz''. Sin embargo, este objeto l{\'\i}mite, como puede verificarse
+f'acilmente, {\em no} es una TL.}. Consecuentemente, las representaciones
+del GL ser'an {\em no-unitarias}\footnote{%
+Las matrices correspondientes a rotaciones puras son unitarias, no as{\'\i}
+las que incluyen boosts.}.
+
+Es 'util notar que, debido a que ${\bf L}^3{\bf =X}^3{\bf +Y}^3$,
+el valor m'aximo que puede asumir (la tercera componente de) el momentum
+angular en la representaci'on $(j,j^{\prime })$ es $j+j^{\prime } $.
+Cuando se describen part{\'{\i }}culas usando campos de materia que se
+transforman bajo una representaci'on de dimensi'on finita del GL, el
+esp{\'{\i }}n de la part{\'{\i }}cula descrita viene dado justamente por el
+momentum angular de la representaci'on correspondiente. Consecuentemente,
+una representaci'on $(j,j^{\prime })$ describir'a part{\'{\i }}culas
+de esp{\'{\i }}n $j+j^{\prime }$.
+
+Es f'acil probar que, si $j+j^{\prime }$ es entero, la representaci'on
+asociada resulta ser univaluada, mientras que si es semientero la
+representaci'on ser'a proyectiva o {\em espinorial}\footnote{%
+ver, por ejemplo, \cite{Cornwell}, p'agina 672.}.
+
+De esta forma se han clasificado todas las representaciones proyectivas {\em %
+finito-dimensionales irreducibles} del grupo restringuido de Lorentz ($%
+L_{+}^{\uparrow }$). Si $\left( j_{1},j_{1}^{\prime }\right) $ y $\left(
+j_{2},j_{2}^{\prime }\right) $ son dos representaciones irreducibles
+entonces, la representaci'on $\left( j_{1},j_{1}^{\prime }\right) \otimes
+\left( j_{2},j_{2}^{\prime }\right) $ puede descomponerse de la manera
+siguiente\footnote{%
+Aqu{\'\i} el s{\'\i}mbolo $\approx $ denota la {\em equivalencia} de
+representaciones.} \cite{Cornwell} 
+\begin{equation}
+\left( j_{1},j_{1}^{\prime }\right) \otimes \left( j_{2},j_{2}^{\prime
+}\right) \approx \sum_{j=\left| j_{1}-j_{2}\right|
+}^{j_{1}+j_{2}}\sum_{j^{\prime }=\left| j_{1}^{\prime }-j_{2}^{\prime
+}\right| }^{j_{1}^{\prime }+j_{2}^{\prime }}\left( j,j^{\prime }\right) . 
+\end{equation}
+
+Por ejemplo\footnote{%
+Comparar con sec. \ref{vect}.}, 
+\begin{equation}
+\left( 0,\frac{1}{2}\right) \otimes \left( \frac{1}{2},0\right) \approx
+\left( \frac{1}{2},\frac{1}{2}\right) , 
+\end{equation}
+\begin{equation}
+\left( \frac{1}{2},\frac{1}{2}\right) \otimes \left( \frac{1}{2},\frac{1}{2}%
+\right) \approx \left( 0,0\right) \oplus \left( 0,1\right) \oplus \left(
+1,0\right) \oplus \left( 1,1\right) . 
+\end{equation}
+
+\subsection{Representaciones irreducibles: Casos particulares\label{reps}}
+
+Con el fin de representar matricialmente los operadores, se considerar'an
+los vectores que definen el espacio de representaci'on $\left(
+j,j^{\prime }\right) $, ordenados como sigue : $\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+j,j^{\prime }
+\end{array}
+\right\rangle $, $\ldots $, $\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+-j,j^{\prime }
+\end{array}
+\right\rangle $, $\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+j,j^{\prime }-1
+\end{array}
+\right\rangle $, $\ldots $, $\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+-j,j^{\prime }-1
+\end{array}
+\right\rangle $, $\ldots $, $\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+j,-j^{\prime }
+\end{array}
+\right\rangle $, $\ldots $, $\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+-j,-j^{\prime }
+\end{array}
+\right\rangle $.
+
+\subsubsection{Representaci'on $(0,0)$ (trivial)}
+
+La representaci'on correspondiente a $j=j^{\prime }=0$ es la
+representaci'on trivial. De las ecuaciones generales (\ref{x1})-(\ref{y2}%
+) se observa que la representaci'on es unidimensional y que todos los
+generadores son identicamente nulos. Por lo tanto, toda TL es representada
+trivialmente por la identidad (unidimensional). Esta representaci'on es
+de sp{\'\i}n cero y es usada para describir particular sin sp{\'\i}n
+(escalares y speudo-escalares).
+
+\subsubsection{Representaci'on $(\frac{1}{2},0)$ (izquierda)\label{left}}
+
+Si $j={1}/{2}$, $j^{\prime }=0$ se obtiene una representaci'on de
+spin $1/2$. Esta representaci'on es llamada ``izquierda'' debido
+a que est'a ligada a la descripci'on de ``neutrinos de mano izquierda''.
+
+En la representaci'on $({1}/{2},0)$ las matrices ${\bf x}^{i}$ son
+bidimensionales, y las ${\bf y}^{i}$ son de dimensi'on uno e
+id'enticamente nulas. La expresi'on expl{\'\i}cita de las matrices $%
+{\bf x}^{i}$ quedan determinadas por (\ref{x1}) y (\ref{x2}). Usando la base 
+$\left\{ \left| j,m\right\rangle _{X}\right\} $ dada por 
+\begin{equation}
+\left| \frac{1}{2},\frac{1}{2}\right\rangle _{X}=\left( 
+\begin{array}{c}
+1 \\ 
+0
+\end{array}
+\right) ,\qquad \left| \frac{1}{2},-\frac{1}{2}\right\rangle _{X}=\left( 
+\begin{array}{c}
+0 \\ 
+1
+\end{array}
+\right) , 
+\end{equation}
+se obtiene f'acilmente que 
+\begin{equation}
+{\bf x}^1=\frac{1}{2}\left( 
+\begin{array}{cc}
+0 & 1 \\ 
+1 & 0
+\end{array}
+\right) ,\qquad {\bf x}^2=\frac{1}{2}\left( 
+\begin{array}{cc}
+0 & -i \\ 
+i & 0
+\end{array}
+\right) ,\qquad {\bf x}^3=\frac{1}{2}\left( 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & -1
+\end{array}
+\right) 
+\end{equation}
+o en forma compacta 
+\begin{equation}
+{\bf x}^{i}=\frac{1}{2}{\bf \sigma }^{i} 
+\end{equation}
+donde ${\bf \sigma }^{i}$ son las usuales matrices de Pauli. Debido a que $%
+{\bf y}^{i}=0$, (\ref{mayus}) implica ${\bf X}^{i}=\frac{1}{2}{\bf \sigma }%
+^{i}$, ${\bf Y}^{i}=0$, de modo que (\ref{lk}) nos dice que los generadores
+en la rep. $(\frac{1}{2},0)$ vienen dados por\footnote{%
+Hemos incluido aqu{\'\i} el sub{\'\i}ndice $L$ para indicar que estas
+matrices son la representaci'on de los generadores del GL en la
+representaci'on izquierda.} 
+\begin{equation}
+({\bf J}_{L}{\bf )}^{i}=\frac{1}{2}{\bf \sigma }^{i},\qquad ({\bf K}_{L}{\bf %
+)}^{i}=-\frac{i}{2}{\bf \sigma }^{i}. 
+\end{equation}
+
+\subsubsection{Representaci'on $(0,\frac{1}{2})$ (derecha)\label{right}}
+
+An'alogamente al caso anterior, se obtiene que la rep. $(0,\frac{1}{2})$
+es tambi'en bidimensional, pero ahora ${\bf X}^{i}=0$, ${\bf Y}^{i}=\frac{%
+1}{2}{\bf \sigma }^{i}$. Por lo tanto, 
+\begin{equation}
+({\bf J}_{R}{\bf )}^{i}=\frac{1}{2}{\bf \sigma }^{i},\qquad ({\bf K}_{R}{\bf %
+)}^{i}=\frac{i}{2}{\bf \sigma }^{i}. 
+\end{equation}
+
+\subsubsection{Representaci'on $(\frac{1}{2},\frac{1}{2})$ (vectorial)%
+\label{vect}}
+
+En el caso de la rep. $(\frac{1}{2},\frac{1}{2})$ las matrices resultantes
+son de dimensi'on 4, al igual que la representaci'on ``original'' dada
+por las matrices ($4\times 4$) $\Lambda _{\mu }^{\nu }$ que act'uan sobre
+los vectores del espacio de Minkownski. M'as aun, 'estas son en
+realidad la misma representaci'on\footnote{%
+M'as exactamente, 'estas son representaciones equivalentes.}, debido a
+que las matrices est'an ligadas por una transformaci'on de similitud.
+
+Ya que $j=\frac{1}{2}$, las matrices ${\bf x}^{i}$ ser'an las mismas que
+en el caso de la rep. $(\frac{1}{2},0)$, es decir, ${\bf x}^{i}=\frac{1}{2}{\bf %
+\sigma }^{i}$. An'alogamente, $j^{\prime }=\frac{1}{2}$ implica que las
+matrices ${\bf y}^{i}$ son las mismas que en $(0,\frac{1}{2})$, es decir,
+tambi'en proporcionales a las matrices de Pauli: ${\bf y}^{i}=\frac{1}{2}%
+{\bf \sigma }^{i}$. De este modo, (\ref{mayus}) nos dice que 
+\begin{equation}
+{\bf X}^{i}=\frac{1}{2}{\bf \sigma }^{i}\otimes {\bf 1}_{2},\qquad {\bf Y}%
+^{i}=\frac{1}{2}{\bf 1}_{2}\otimes {\bf \sigma }^{i}, 
+\end{equation}
+y por lo tanto 
+\begin{equation}
+{\bf X}^1=\frac{1}{2}\left( 
+\begin{array}{cccc}
+0 & 1 & 0 & 0 \\ 
+1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 1 \\ 
+0 & 0 & 1 & 0
+\end{array}
+\right) ,\quad {\bf X}^2=\frac{1}{2}\left( 
+\begin{array}{cccc}
+0 & -i & 0 & 0 \\ 
+i & 0 & 0 & 0 \\ 
+0 & 0 & 0 & -i \\ 
+0 & 0 & i & 0
+\end{array}
+\right) ,\quad {\bf X}^3=\frac{1}{2}\left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & -1 & 0 & 0 \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & -1
+\end{array}
+\right) , 
+\end{equation}
+\begin{equation}
+{\bf Y}^1=\frac{1}{2}\left( 
+\begin{array}{cccc}
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1 \\ 
+1 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0
+\end{array}
+\right) ,\quad {\bf Y}^2=\frac{1}{2}\left( 
+\begin{array}{cccc}
+0 & 0 & -i & 0 \\ 
+0 & 0 & 0 & -i \\ 
+i & 0 & 0 & 0 \\ 
+0 & i & 0 & 0
+\end{array}
+\right) ,\quad {\bf Y}^3=\frac{1}{2}\left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & -1 & 0 \\ 
+0 & 0 & 0 & -1
+\end{array}
+\right) . 
+\end{equation}
+
+Usando (\ref{lk}) se obtenen las matrices que representan a los generadores
+de rotaciones y boosts en la representaci'on $(\frac{1}{2},\frac{1}{2})$: 
+\begin{equation}
+{\bf J}^1=\frac{1}{2}\left( 
+\begin{array}{cccc}
+0 & 1 & 1 & 0 \\ 
+1 & 0 & 0 & 1 \\ 
+1 & 0 & 0 & 1 \\ 
+0 & 1 & 1 & 0
+\end{array}
+\right) ,\quad {\bf J}^2=\frac{1}{2}\left( 
+\begin{array}{cccc}
+0 & -i & -i & 0 \\ 
+i & 0 & 0 & -i \\ 
+i & 0 & 0 & -i \\ 
+0 & i & i & 0
+\end{array}
+\right) ,\quad {\bf J}^3=\left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & -1
+\end{array}
+\right) ,  \label{mm1}
+\end{equation}
+\begin{equation}
+{\bf K}^1=\frac{1}{2}\left( 
+\begin{array}{cccc}
+0 & -i & i & 0 \\ 
+-i & 0 & 0 & i \\ 
+i & 0 & 0 & -i \\ 
+0 & i & -i & 0
+\end{array}
+\right) ,\quad {\bf K}^2=\frac{1}{2}\left( 
+\begin{array}{cccc}
+0 & -1 & 1 & 0 \\ 
+1 & 0 & 0 & 1 \\ 
+-1 & 0 & 0 & -1 \\ 
+0 & -1 & 1 & 0
+\end{array}
+\right) ,\quad {\bf K}^3=\left( 
+\begin{array}{cccc}
+0 & 0 & 0 & 0 \\ 
+0 & i & 0 & 0 \\ 
+0 & 0 & -i & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}
+\right) .  \label{mm2}
+\end{equation}
+
+Es f'acil verificar que los generadores en las expresiones (\ref{d1}) y (%
+\ref{d2}) pueden obtenerse aplicando una transformaci'on de similitud
+sobre las matrices aqu{\'{\i }} encontradas. Si se denotan las matrices en (%
+\ref{mm1}) y (\ref{mm2}) por $\widetilde{{\bf T}}_{\alpha }$, entonces ${\bf %
+T}_{\alpha }={\bf S}\widetilde{{\bf T}}_{\alpha }{\bf S}^{-1}$($\alpha
+=1,\ldots ,6$), donde la matriz ${\bf S}$ puede elegirse como
+
+\begin{equation}
+{\bf S}=\left( 
+\begin{array}{cccc}
+0 & 1 & -1 & 0 \\ 
+-1 & 0 & 0 & 1 \\ 
+-i & 0 & 0 & -i \\ 
+0 & 1 & 1 & 0
+\end{array}
+\right) . 
+\end{equation}
+
+En particular se verifica, por ejemplo, que 
+\begin{eqnarray*}
+{\bf T}_{3} &=&\allowbreak \left( 
+\begin{array}{cccc}
+0 & 0 & 0 & 0 \\ 
+0 & 0 & -i & 0 \\ 
+0 & i & 0 & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}
+\right) =\left( 
+\begin{array}{cccc}
+0 & 1 & -1 & 0 \\ 
+-1 & 0 & 0 & 1 \\ 
+-i & 0 & 0 & -i \\ 
+0 & 1 & 1 & 0
+\end{array}
+\right) \left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & -1
+\end{array}
+\right) \left( 
+\begin{array}{cccc}
+0 & 1 & -1 & 0 \\
+-1 & 0 & 0 & 1 \\ 
+-i & 0 & 0 & -i \\ 
+0 & 1 & 1 & 0
+\end{array}
+\right) ^{-1} \\
+&=&{\bf S}\widetilde{{\bf T}}_{3}{\bf S}^{-1}={\bf SJ}^3{\bf S}^{-1}.
+\end{eqnarray*}
+
+\subsection{Representaciones incluyendo reflexiones espaciales y temporales%
+\label{riret}}
+
+Consid'erese la extensi'on del grupo $SL(2,C)$, de modo que incorpore
+reflexiones espaciales. Las representaciones del grupo ampliado nos entregan
+representaciones (proyectivas) del grupo completo de Lorentz $L$. La
+inclusi'on de estas transformaciones discretas no conduce a una 'unica
+extensi'on de $SL(2,C)$, sino que a 8 extensiones inequivalentes\footnote{%
+Esto complica en cierta medida el an'alisis.} \cite{Cornwell}. Aqu{\'\i}
+s'olo se bosquejar'an algunos de los resultados principales, mostrando
+los objetos que ser'an usados posteriormente.
+
+Como es sabido\footnote{%
+ver secci'on \ref{descom}.}, es posible descomponer una TL $\Lambda \in L$
+como la composici'on de una reflexi'on espacial y/o temporal y un
+elemento del grupo restringuido de Lorentz. Las propiedades algebr'aicas
+de los elementos del grupo de reflexiones espaciales y temporales $R$ pueden
+obtenerse directamente de las expresiones expl{\'{\i }}citas de ${\bf I}_{s}$%
+, ${\bf I}_{t},$ ${\bf I}_{st}$, ${\bf J}_{i}$ y ${\bf K}_{i}$ (ver secs. 
+\ref{descom} y \ref{gene}). Es directo verificar que 
+\begin{equation}
+{\bf I}_{s}^2={\bf I}_{t}^2={\bf I}_{st}^2={\bf 1},\qquad {\bf I}_{s}%
+{\bf I}_{t}={\bf I}_{t}{\bf I}_{s}={\bf I}_{st}, 
+\end{equation}
+\begin{equation}
+\left[ {\bf I}_{st}{\bf ,I}_{s}\right] =\left[ {\bf I}_{st},{\bf I}_{t}%
+\right] ={\bf 0,\qquad }\left[ {\bf J}^{i}{\bf ,I}_{st}\right] =\left[ {\bf K%
+}^{i}{\bf ,I}_{st}\right] ={\bf 0,} 
+\end{equation}
+\begin{equation}
+\left[ {\bf J}^{i}{\bf ,I}_{s}\right] =\left[ {\bf J}^{i}{\bf ,I}_{t}\right]
+={\bf 0,\qquad }\left\{ {\bf K}^{i}{\bf ,I}_{s}\right\} =\left\{ {\bf K}^{i}%
+{\bf ,I}_{t}\right\} ={\bf 0,}  \label{conmutsp}
+\end{equation}
+de manera que 
+\begin{equation}
+{\bf X}^{i}{\bf I}_{s}={\bf I}_{s}{\bf Y}^{i},\qquad {\bf X}^{i}{\bf I}_{t}=%
+{\bf I}_{t}{\bf Y}^{i},  \label{pasa1}
+\end{equation}
+\begin{equation}
+{\bf Y}^{i}{\bf I}_{s}={\bf I}_{s}{\bf X}^{i},\qquad {\bf Y}^{i}{\bf I}_{t}=%
+{\bf I}_{t}{\bf X}^{i},  \label{pasa2}
+\end{equation}
+\begin{equation}
+\left[ {\bf X}^{i}{\bf ,I}_{st}\right] =\left[ {\bf Y}^{i}{\bf ,I}_{st}%
+\right] ={\bf 0,}
+\end{equation}
+donde ${\bf X}^{i}$ e ${\bf Y}^{i}$ vienen dados por (\ref{defxy}).
+
+Se asumir'a que el mapeo entre elementos de $SL(2,C)$ y $L_{+}^{\uparrow
+} $ es tambi'en v'alido en el caso extendido. Denotando por $\left( 
+{\bf P}_{+},{\bf P}_{-}\right) $, $\left( {\bf T}_{+},{\bf T}_{-}\right) $ e 
+$\left( {\bf I}_{+},{\bf I}_{-}\right) $ a los elementos asociados a ${\bf I}%
+_{s}$, ${\bf I}_{t}$, ${\bf I}_{st}$ en la extensi'on de $SL(2,C)$ se
+tiene\footnote{%
+En nuestro caso ${\bf P}_{-}=-{\bf P}_{+}$, ${\bf T}_{-}=-{\bf T}_{+}$ e $%
+{\bf I}_{-}=-{\bf I}_{+}$.}, por ejemplo, que la relaci'on ${\bf I}%
+_{s}^2={\bf 1}$ puede mapearse en ${\bf P}_{\pm }^2={\bf 1}_{2}$ o en $%
+{\bf P}_{\pm }^2=-{\bf 1}_{2}$. Esta propiedad puede entenderse desde un
+punto de vista algebraico notando que ${\bf I}_{s}^2={\bf 1}$ nos dice que 
+${\bf I}_{s}^2\in SL(2,C)$ y que las relaciones (\ref{conmutsp}) implican $%
+\left[ {\bf J}^{i}{\bf ,I}_{s}^2\right] =\left[ {\bf K}^{i}{\bf ,I}_{s}^2%
+\right] ={\bf 0}$, por lo que ${\bf P}_{\pm }^2$ debe pertenecer al centro
+de $SL(2,C)$, es decir ${\bf I}_{s}^2=\pm {\bf 1}_{2}$. Lo mismo es v'alido
+para ${\bf I}_{t}^2$ y ${\bf I}_{st}^2$.
+
+Por lo tanto, si se incluyen las transformaciones discretas de Lorentz,
+existen $2^3=8$ extensiones distintas de $SL(2,C)$: 
+\begin{equation}
+{\bf P}_{\pm }^2=\epsilon _{s}{\bf 1}, \qquad {\bf T}_{\pm
+}^2=\epsilon _{t}{\bf 1}, \qquad {\bf I}_{\pm }^2=\epsilon _{st}%
+{\bf 1},  \label{cua}
+\end{equation}
+donde $\epsilon _{s}$, $\epsilon _{t}$ y $\epsilon _{st}$, pueden asumir los
+valores $\pm 1$.
+
+Es posible asumir, sin perder generalidad\footnote{%
+ver \cite{Cornwell}, p'agina 677.}, que 
+\begin{equation}
+{\bf P}_{+}{\bf T}_{+}={\bf I}_{+}, 
+\end{equation}
+y entonces (\ref{cua}) implica \cite{BS} que 
+\begin{equation}
+{\bf T}_{+}{\bf P}_{+}=\epsilon _{s}\epsilon _{t}\epsilon _{st}{\bf I}_{+}.
+\label{reves}
+\end{equation}
+
+As{\'{\i }}, por ejemplo, si $\epsilon _{s}=\epsilon _{s}=\epsilon _{s}=1$
+entonces ${\bf T}_{+}{\bf P}_{+}={\bf I}_{+}$, mientras que si $\epsilon
+_{s}=\epsilon _{s}=-\epsilon _{s}=1$ entonces ${\bf T}_{+}{\bf P}_{+}=-{\bf I%
+}_{+}={\bf I}_{-}$. En la tabla siguiente se muestran las posibles
+extensiones $\widetilde{L}_{i}$ ($i=1,\ldots ,8$) de $SL(2,C)$.
+
+\begin{center}
+\begin{tabular}{c||c|c|c|c}
+extensi'on & $\epsilon _{s}$ & $\epsilon _{t}$ & $\epsilon _{st}$ & ${\bf %
+T}_{+}{\bf P}_{+}$ \\ \hline\hline
+$\widetilde{L}_{1}$ & $1$ & $1$ & $1$ & ${\bf I}_{+}$ \\ \hline
+$\widetilde{L}_{2}$ & $1$ & $1$ & $-1$ & ${\bf I}_{-}$ \\ \hline
+$\widetilde{L}_{3}$ & $1$ & $-1$ & $1$ & ${\bf I}_{-}$ \\ \hline
+$\widetilde{L}_{4}$ & $1$ & $-1$ & $-1$ & ${\bf I}_{+}$ \\ \hline
+$\widetilde{L}_{5}$ & $-1$ & $1$ & $1$ & ${\bf I}_{-}$ \\ \hline
+$\widetilde{L}_{6}$ & $-1$ & $1$ & $-1$ & ${\bf I}_{+}$ \\ \hline
+$\widetilde{L}_{7}$ & $-1$ & $-1$ & $1$ & ${\bf I}_{+}$ \\ \hline
+$\widetilde{L}_{8}$ & $-1$ & $-1$ & $-1$ & ${\bf I}_{-}$ \\ \hline
+\end{tabular}
+\end{center}
+
+De estas 8 extensiones posibles, la m'as usada en la descripci'on
+relativista de part{\'{\i }}culas es $\widetilde{L}_{8}$ \cite{Cornwell}%
+\footnote{%
+En el caso de part{\'\i}culas de sp{\'\i}n $1/2$, $\widetilde{L}_{8}$
+describe electrones y neutrinos, a trav'es de las ecuaciones de Dirac y
+Weyl.}. En lo que sigue {\em s'olo se considerar'a esta extensi'on}.
+
+Si una representaci'on de $\widetilde{L}_{8}$ contiene, en su
+reducci'on a los elementos de $SL(2,C)$, la representaci'on $\left(
+j,j^{\prime }\right) $, entonces necesariamente debe contener adem'as la
+representaci'on $\left( j^{\prime },j\right) $ ya que, por ejemplo, las
+primeras relaciones en (\ref{pasa1}) y (\ref{pasa2}) implican que 
+\begin{equation}
+{\bf X}^3\left( {\bf I}_{s}\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+mm^{\prime }
+\end{array}
+\right\rangle \right) =m^{\prime }\left( {\bf I}_{s}\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+mm^{\prime }
+\end{array}
+\right\rangle \right) ,\qquad m^{\prime }=-j^{\prime },\ldots ,j^{\prime }, 
+\end{equation}
+\begin{equation}
+{\bf Y}^3\left( {\bf I}_{s}\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+mm^{\prime }
+\end{array}
+\right\rangle \right) =m\left( {\bf I}_{s}\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+mm^{\prime }
+\end{array}
+\right\rangle \right) ,\qquad m=-j,\ldots ,j, 
+\end{equation}
+de modo que el vector $\left( {\bf I}_{s}\left| 
+\begin{array}{c}
+jj^{\prime } \\ 
+mm^{\prime }
+\end{array}
+\right\rangle \right) $ debe ser proporcional a $\left| 
+\begin{array}{c}
+j^{\prime }j \\ 
+m^{\prime }m
+\end{array}
+\right\rangle $. En otras palabras, la transformaci'on espacial ${\bf I}%
+_{s}$ mapea vectores del espacio de representaci'on de $\left(
+j,j^{\prime }\right) $ en los de $\left( j^{\prime },j\right) $\footnote{%
+Se dice entonces que $\left( j,j^{\prime }\right) $ y $\left( j^{\prime
+},j\right) $ son representaciones con {\em paridad opuesta}.}. El mismo
+resultado es v'alido para la acci'on de ${\bf I}_{t}$.
+
+Esto muestra que el espacio de representaci'on correspondiente a las {\em %
+representaciones irreducibles} del grupo de Lorentz completo\footnote{%
+Es decir, incluyendo reflexiones espaciales y temporales.} es
+
+\begin{itemize}
+\item  la {\em suma directa} de los espacios de representaci'on de las
+representaciones $\left( j,j^{\prime }\right) $ y $\left( j^{\prime
+},j\right) ,$ cuando $j\neq j^{\prime }$.
+
+\item  el espacio de representaci'on de $\left( j,j\right) $, si $%
+j=j^{\prime }$.
+\end{itemize}
+
+A partir de (\ref{pasa1}), (\ref{pasa2}) y de las expresiones (\ref{x1})--(%
+\ref{y2}) para las representaciones $\left( j,j^{\prime }\right) $ es
+posible probar que las expresiones de ${\bf P}_{+}$, ${\bf T}_{+}$ e ${\bf I}%
+_{+}$ para representaciones irreducibles del grupo completo de Lorentz
+pueden considerarse tal como se describe en los dos casos siguientes \cite
+{Gilmore}
+
+\subsubsection{Caso $j=j^{\prime }$.}
+
+En este caso, la representaci'on tiene dimensi'on $(2j+1)^2$ y
+constituye una representaci'on verdadera de $L$ ($j+j^{\prime }=2j=$
+entero). La acci'on de ${\bf P}_{+}$, ${\bf T}_{+}$ e ${\bf I}_{+}$
+vienen dadas por 
+\begin{equation}
+{\bf P}_{+}\left| 
+\begin{array}{c}
+jj \\ 
+mm^{\prime }
+\end{array}
+\right\rangle =\beta _{s}^{jj}\left| 
+\begin{array}{c}
+jj \\ 
+m^{\prime }m
+\end{array}
+\right\rangle , 
+\end{equation}
+\begin{equation}
+{\bf T}_{+}\left| 
+\begin{array}{c}
+jj \\ 
+mm^{\prime }
+\end{array}
+\right\rangle =\beta _{t}^{jj}\left| 
+\begin{array}{c}
+jj \\ 
+m^{\prime }m
+\end{array}
+\right\rangle , 
+\end{equation}
+\begin{equation}
+{\bf I}_{+}\left| 
+\begin{array}{c}
+jj \\ 
+mm^{\prime }
+\end{array}
+\right\rangle =\beta _{s}^{jj}\beta _{t}^{jj}\left| 
+\begin{array}{c}
+jj \\ 
+mm^{\prime }
+\end{array}
+\right\rangle , 
+\end{equation}
+donde los n'umeros $\beta _{s}^{jj}$ y $\beta _{t}^{jj}$ pueden asumir
+independientemente los valores $1$ 'o $-1$. En este caso se encuentran
+cuatro posibles representaciones inequivalente de la extensi'on $%
+\widetilde{L}_{8}$. Las matrices que representan a los generadores de
+rotaciones y boosts tienen la misma expresi'on que en la
+representaci'on $\left( j,j\right) $ de $SL(2,C)$.
+
+\subsubsection{Caso $j\neq j^{\prime }$.}
+
+Aqu{\'\i} las representaciones irreducibles tienen dimensi'on $2\left(
+2j+1\right) \left( 2j^{\prime }+1\right) $ y s'olo constituyen
+representaciones verdaderas de $L$ si $j+j^{\prime }$ es entero. En caso
+contrario se obtiene una representaci'on proyectiva.
+
+\paragraph{${\bf j+j}^{\prime }{\bf \neq }$entero.}
+
+Aqu{\'\i} ${\bf P}_{+}$, ${\bf T}_{+}$ e ${\bf I}_{+}$ se pueden considerar
+de la forma\footnote{${\bf 1}$ denota la identidad de dimensi'on $\left(
+2j+1\right) \left( 2j^{\prime }+1\right) $.} 
+\begin{equation}
+{\bf P}_{+}=i\left( 
+\begin{array}{cc}
+{\bf 0} & {\bf 1} \\ 
+{\bf 1} & {\bf 0}
+\end{array}
+\right) ,\qquad {\bf T}_{+}=\left( 
+\begin{array}{cc}
+{\bf 0} & {\bf 1} \\ 
+-{\bf 1} & {\bf 0}
+\end{array}
+\right) ,\qquad {\bf I}_{+}=-i\left( 
+\begin{array}{cc}
+{\bf 1} & {\bf 0} \\ 
+{\bf 0} & -{\bf 1}
+\end{array}
+\right) . 
+\end{equation}
+
+\paragraph{${\bf j+j}^{\prime }{\bf =}$entero.}
+
+Aqu{\'\i} ${\bf P}_{+}$, ${\bf T}_{+}$ e ${\bf I}_{+}$ se pueden considerar
+de dos maneras inequivalentes 
+\begin{equation}
+{\bf P}_{+}=\left( 
+\begin{array}{cc}
+{\bf 0} & {\bf 1} \\ 
+{\bf 1} & {\bf 0}
+\end{array}
+\right) ,\qquad {\bf T}_{+}=\left( 
+\begin{array}{cc}
+{\bf 0} & {\bf 1} \\ 
+{\bf 1} & {\bf 0}
+\end{array}
+\right) ,\qquad {\bf I}_{+}=\left( 
+\begin{array}{cc}
+{\bf 1} & {\bf 0} \\ 
+{\bf 0} & {\bf 1}
+\end{array}
+\right) , 
+\end{equation}
+o bien 
+\begin{equation}
+{\bf P}_{+}=\left( 
+\begin{array}{cc}
+{\bf 0} & {\bf 1} \\ 
+{\bf 1} & {\bf 0}
+\end{array}
+\right) ,\qquad {\bf T}_{+}=\left( 
+\begin{array}{cc}
+{\bf 0} & -{\bf 1} \\ 
+-{\bf 1} & {\bf 0}
+\end{array}
+\right) ,\qquad {\bf I}_{+}=\left( 
+\begin{array}{cc}
+-{\bf 1} & {\bf 0} \\ 
+{\bf 0} & -{\bf 1}
+\end{array}
+\right) . 
+\end{equation}
+
+En cualquiera de estos casos, los operadores de rotaciones y boosts,
+denotados conjuntamente por ${\bf T}_{\alpha }$, vienen dados por la suma
+directa de las matrices correspondientes a las reps. $\left( j,j^{\prime
+}\right) $ y $\left( j^{\prime },j\right) $, es decir 
+\begin{equation}
+{\bf T}_{\alpha }=\left( 
+\begin{array}{cc}
+{\bf T}_{\alpha }^{\left( j,j^{\prime }\right) } & {\bf 0} \\ 
+{\bf 0} & {\bf T}_{\alpha }^{\left( j^{\prime },j\right) }
+\end{array}
+\right) . 
+\end{equation}
+
+As{\'\i}, cuando se incluyen las reflexiones espaciales y temporales, para
+considerar representaciones del grupo completo de Lorentz $L$, se encuentra
+que cada una de las 8 extensiones inequivalentes admite, en general, m'as
+de una representaci'on.
+
+\subsection{Ejemplos}
+
+\subsubsection{$j=j^{\prime }={1}/{2}.$}
+
+La extensi'on $\widetilde{L}_{8}$ de $SL(2,C)$, nos entrega, para el caso 
+$j=j^{\prime }={1}/{2}$, las siguientes posibles representaciones 
+\begin{equation}
+{\bf P}_{+}=\pm \left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & 0 & 1
+\end{array}
+\right) ,\qquad {\bf I}_{+}=\pm \left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & 0 & 1
+\end{array}
+\right) ,\qquad {\bf I}_{+}={\bf T}_{+}{\bf I}_{+}. 
+\end{equation}
+
+La representaci'on original se obtiene en el caso 
+\begin{equation}
+{\bf P}_{+}=\left( 
+\begin{array}{cccc}
+-1 & 0 & 0 & 0 \\ 
+0 & 0 & -1 & 0 \\ 
+0 & -1 & 0 & 0 \\ 
+0 & 0 & 0 & -1
+\end{array}
+\right) ,\qquad {\bf I}_{+}=\left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & 0 & 1
+\end{array}
+\right) ,\qquad {\bf I}_{+}={\bf T}_{+}{\bf I}_{+}, 
+\end{equation}
+y las usuales matrices de la sec. \ref{descom} se encuentran aplicando la
+transformaci'on de similaridad de la sec. \ref{vect}.
+
+\subsubsection{$j=0$, $j^{\prime }=\frac{1}{2}.$}
+
+En este caso, la extensi'on $\widetilde{L}_{8}$ define las matrices
+correspondientes a las transformaciones discretas de Lorentz 
+\begin{equation}
+{\bf P}_{+}=i\left( 
+\begin{array}{cc}
+{\bf 0} & {\bf 1}_{2} \\ 
+{\bf 1}_{2} & {\bf 0}
+\end{array}
+\right) ,\qquad {\bf T}_{+}=\left(
+\begin{array}{cc}
+{\bf 0} & {\bf 1}_{2} \\ 
+-{\bf 1}_{2} & {\bf 0}
+\end{array}
+\right) ,\qquad {\bf I}_{+}=-i\left( 
+\begin{array}{cc}
+{\bf 1}_{2} & {\bf 0} \\ 
+{\bf 0} & -{\bf 1}_{2}
+\end{array}
+\right) . 
+\end{equation}
+

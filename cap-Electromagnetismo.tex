@@ -1,0 +1,180 @@
+\chapter{Teor'ia de Gauge en el Electromagnetismo}
+Una teor'ia de gauge es una teor'ia de campos la c'ual es invariante bajo un grupo continuo de transformaciones locales. Las transformaciones entre posibles gauges, llamadas transformaciones de gauge, forman un grupo de Lie el cual est'a referido a el grupo de simetr'ias o el grupo de gauge de la teor'ia.
+Muchas teor'ias en f'isica son descritas por Lagrangianos los cuales son invariantes bajo alguna transformaci'on de simetr'ia de grupos. Las teor'ias de gauge son importantes en las teor'ias de campo en donde se explica la din'amica de part'iculas elementales. La electrodin'amica cu'antica es una teor'ia de gauge abeliana con grupo de simetr'ia $U(1)$, donde el \textit{campo de gauge} es el cuadri-potencial electromagn'etico $(\phi,\vec{A})$. Por su parte, el Modelo Standard es una teor'ia de gauge no-abeliana cuyo grupo de simetr'ia  es $U(1)\times SU(2)\times SU(3)$.
+Historicamente, las ideas de teor'ias de gauge fueron primeramente establecidas en el contexto del electromagnetismo cl'asico.
+
+La primera teor'ia en tener una simetr'ia de gauge fue la formulaci'on electrodin'amica de Maxwell en 1864. La importancia de esta simetr'ia permaneci'o inadvertida en las primeras formulaciones. Del mismo modo, Hilbert hab'ia derivado las ecuaciones de campo de Einstein, al postular la invariancia de la acci'on bajo transformaciones generales de coordenadas. M'as tarde Hermann Weyl, en su intento de unificar la relatividad general y el electromagnetismo conjetura el \textit{Eichinvarianz} o invariancia bajo el cambio de escala, que tambi'en podr'ia ser una simetr'ia local de la relatividad general.
+\section{Principio de Gauge en Electrodin'amica}
+\subsection{Potenciales Escalar y Vectorial}
+Las ecuaciones de Maxwell consisten en un set de ecuaciones diferenciales parciales que relacionan las componentes de los campos el'ectrico y magn'etico. Ellas pueden ser resueltas si se encuentran en situaciones simples. No obstante en conveniente introducir potenciales, de modo de obtener un n'umero peque\~no de ecuaciones de segundo grado, los cuales satisfacen las ecuaciones de Maxwell id'enticamente.
+Dado que $\vec{\nabla}\cdot\vec{B}=0$, podemos definir $\vec{B}$ en t'erminos de un potencial vectorial $\vec{A}$, entonces
+\begin{equation}
+\vec{B}=\vec{\nabla}\times\vec{A}.
+\end{equation}
+Por otro lado, tenemos  de la Ley de Faraday $\vec{\nabla}\times\vec{E}=-(1/c)\,\partial\vec{B}/\partial t$, la que puede ser escrita como
+\begin{equation}
+\vec{\nabla}\times\left(\vec{E}+\frac{1}{c}\frac{\partial\vec{A}}{\partial t}\right)=\vec{0}. \label{ec2}
+\end{equation}
+Esto significa que la cantidad que se anula en \eqref{ec2} puede ser escrita como el gradiante de alguna funci'on escalar la cu'al llamaremos $\phi$, de modo que:
+\begin{equation}
+\vec{E}+\frac{1}{c}\frac{\partial\vec{A}}{\partial t}=-\vec{\nabla}\phi
+\end{equation}
+de donde
+\begin{equation}
+\vec{E}=-\vec{\nabla}\phi-\frac{1}{c}\frac{\partial\vec{A}}{\partial t}. \label{ec4}
+\end{equation}
+Las deficiniones de $\vec{E}$ y $\vec{B}$ en t'erminos de los potenciales $\phi$ y $\vec{A}$ de acuerdo con \eqref{ec2} y \eqref{ec4} satisfacen id'enticamente las ecuaciones de Maxwell homog'eneas. La din'amica de $\vec{A}$ y $\phi$ es determinada por las ecuaciones inhomog'eneas de Maxwell.
+De esta forma, introduciendo los potenciales en las ecuaciones de Maxwell inhomog'eneas quedan de la forma:
+\begin{eqnarray}
+\vec{\nabla}^2\phi+\frac{1}{c}\frac{\partial}{\partial t}(\vec{\nabla}\cdot\vec{A})&=&-4\pi \rho \label{ec5} \\
+\vec{\nabla}^2\vec{A}-\frac{1}{c^2}\frac{\partial^2 \vec{A}}{\partial t^2}-\vec{\nabla}\left(\vec{\nabla}\cdot\vec{A}+\frac{1}{c}\frac{\partial \phi}{\partial t}\right)&=&-\frac{4\pi}{c}\vec{J} \label{ec6}
+\end{eqnarray}
+De esta manera, se han reducido las ecuaciones de Maxwell a s'olo dos ecuaciones. Sin embargo, estas a'un siguen siendo ecuaciones acopladas. Podemos desacoplar estas ecuaciones estudiando la arbitrariedad de las definiciones de los potenciales. Dado que $\vec{B}$ es definido en t'erminos de $\vec{A}$, el potencial vectorial es arbitrario en el sentido de que si le agregamos un t'ermino de la forma de un gradiente de alguna funci'on escalar la definici'on de $\vec{B}$ no cambiar'a. En efecto, consideremos una funci'on escalar $\Lambda$, de manera que $\vec{B}$ queda definido como,
+\begin{eqnarray}
+\vec{B}&=&\vec{\nabla}\times(\vec{A}+\vec{\nabla}\Lambda) \\
+&=&\vec{\nabla}\times\vec{A}+\cancelto{0}{\vec{\nabla}\times(\vec{\nabla}\Lambda)} \\
+&=&\vec{\nabla}\times\vec{A}.
+\end{eqnarray}
+De esta manera, hemos encontrado que $\vec{B}$ se mantiene invariante bajo la transformaci'on,
+\begin{equation}
+\vec{A}\rightarrow\vec{A}^\prime=\vec{A}+\vec{\nabla}\Lambda \label{Ainvariante}.
+\end{equation}
+De la ecuaci'on \eqref{ec4} podemos ver tambi'en que
+\begin{equation}
+\begin{aligned}
+\vec{E}&=-\vec{\nabla}\phi-\frac{1}{c}\frac{\partial\vec{A}^\prime}{\partial t} \\
+&=-\vec{\nabla}\phi-\frac{1}{c}\frac{\partial}{\partial t}(\vec{A}+\vec{\nabla}\Lambda) \\
+&=-\vec{\nabla}\phi-\frac{1}{c}\frac{\partial\vec{A}}{\partial t}-\frac{1}{c}\frac{\partial(\vec{\nabla}\Lambda)}{\partial t},
+\end{aligned}
+\end{equation}
+de donde entonces para que el campo el'ectrico se mantenga invariante, simult'aneamente el potencial escalar debe transformar como,
+\begin{equation}
+\phi\rightarrow\phi^\prime=\phi-\frac{1}{c}\frac{\partial \Lambda}{\partial t}. \label{phiinvariante}
+\end{equation}
+Las ecuaciones \eqref{Ainvariante} y \eqref{phiinvariante} implican que podemos escoger potenciales $\vec{A}$ y $\phi$ de tal manera que
+\begin{equation}
+\vec{\nabla}\cdot\vec{A}+\frac{1}{c}\frac{\partial \phi}{\partial t}=0. \label{condiciondegauge}
+\end{equation}
+Con estos resultados es posible desacoplar las ecuaciones \eqref{ec5} y \eqref{ec6} y obtener dos ecuaciones de onda inhomog'eneas, una para $\phi$ y otra para $\vec{A}$. Entonces,
+\begin{eqnarray}
+\vec{\nabla}^2\phi-\frac{1}{c^2}\frac{\partial^2 \phi}{\partial t^2}&=&-4\pi\rho, \label{econdaphi}\\ 
+\vec{\nabla}^2\vec{A}-\frac{1}{c^2}\frac{\partial^2\vec{A}}{\partial t^2}&=&-\frac{4\pi}{c}\vec{J}. \label{econdaA}
+\end{eqnarray}
+Las ecuaciones \eqref{econdaphi}, \eqref{econdaA} y \eqref{condiciondegauge} forman ecuaciones equivalentes en todos los aspectos a las ecuaciones de Maxwell.
+\subsection{Transformaciones de Gauge; Gauge de Lorenz y Gauge de Coulomb}
+Las transformaciones \eqref{Ainvariante} y \eqref{phiinvariante} son llamadas transformaciones de gauge, y la invariancia de los campos bajo estas transformaciones es llamada invariancia de gauge. La relaci'on \eqref{condiciondegauge} entre $\vec{A}$ y $\phi$ es llamada condici'on de Lorenz. En forma de ver que los potenciales siempre pueden encontrarse de manera que satisfagan la condici'on de Lorenz, supongamos que los potenciales $\vec{A}$ y $\phi$ satisfacen \eqref{ec5} y \eqref{ec6} pero no \eqref{condiciondegauge}. Luego, hagamos una transformaci'on de gauge invocando potenciales $\vec{A}^\prime$ y $\phi^\prime$ e impongamos que 'estos satisfacen la condici'on de Lorenz, es decir:
+\begin{equation}
+\begin{aligned}
+\vec{\nabla}\cdot\vec{A}^\prime+\frac{1}{c}\frac{\partial\phi^\prime}{\partial t}&=\vec{\nabla}\cdot\vec{A}+\frac{1}{c}\frac{\partial\phi}{\partial t}+\vec{\nabla}^2\Lambda-\frac{1}{c^2}\frac{\partial^2\Lambda}{\partial t^2} \\
+&=0.
+\end{aligned}
+\end{equation}
+Por lo tanto, dada una funci'on de gauge $\Lambda$ que satisface
+\begin{equation}
+\vec{\nabla}^2\Lambda-\frac{1}{c^2}\frac{\partial^2\Lambda}{\partial t^2}=-\left(\vec{\nabla}\cdot\vec{A}+\frac{1}{c}\frac{\partial\phi}{\partial t}\right),
+\end{equation}
+los nuevos potenciales $\vec{A}^\prime$ y $\phi^\prime$ satisfacer'an la condici'on de Lorenz y las ecuaciones de onda \eqref{econdaphi} y \eqref{econdaA}.
+Incluso para potenciales que satisfacen la condici'on de Lorenz \eqref{condiciondegauge} hay arbitrariedad. Las transformaciones de gauge \eqref{Ainvariante} y \eqref{phiinvariante} donde 
+\begin{equation}
+\vec{\nabla}^2\Lambda-\frac{1}{c^2}\frac{\partial^2\Lambda}{\partial t^2}=0
+\end{equation}
+preservan la condici'on de Lorenz. Todos los potenciales de esta clase son llamados a pertenecer al gauge de Lorenz.
+Otro gauge a mencionar es el llamado gauge de Coulomb o gauge transversal. Este gauge es en el cual
+\begin{equation}
+\vec{\nabla}\cdot\vec{A}=0.
+\end{equation}
+De \eqref{ec5} podemos ver que el potencial escalar satisface la ecuaci'on de Poisson
+\begin{equation}
+\vec{\nabla}^2\phi=-4\pi\rho,
+\end{equation}
+cuya soluci'on es bien conocida y es
+\begin{equation}
+\phi(\vec{x},t)=\int \frac{\rho(\vec{x}^\prime,t)}{\vert\vec{x}-\vec{x}^\prime\vert}d^3x^\prime. \label{solucion1}
+\end{equation}
+El potencial vectorial satisface la ecuaci'on inhomogenea de onda
+\begin{equation}
+\vec{\nabla}^2\vec{A}-\frac{1}{c^2}\frac{\partial^2\vec{A}}{\partial t^2}=-\frac{4\pi}{c}\vec{J}+\frac{1}{c}\vec{\nabla}\frac{\partial\phi}{\partial t}
+\end{equation}
+El t'ermino de corriente que involucra al potencial puede, en principio, ser calculado a partir de \eqref{solucion1}. Formalmente, usamos la ecuaci'on de continuidad para escribir
+\begin{equation}
+\vec{\nabla}\frac{\partial \phi}{\partial t}=-\vec{\nabla}\int\frac{\vec{\nabla}^\prime\cdot\vec{J}(\vec{x}^\prime,t)}{\vert\vec{x}-\vec{x}^\prime\vert}d^3x^\prime. \label{ecparacomparar}
+\end{equation}
+Si la corriente es escrita como la suma de las partes longitudinales y transversal, es decir,
+\begin{equation}
+\vec{J}=\vec{J}_L+\vec{J}_T,
+\end{equation}
+donde $\vec{\nabla}\times\vec{J}_L=0$ y $\vec{\nabla}\cdot\vec{J}_T=0$, luego estas pueden ser escritas como
+\begin{eqnarray}
+\vec{J}_L&=&-\frac{1}{4\pi}\vec{\nabla}\int\frac{\vec{\nabla}^\prime\cdot\vec{J}}{\vert\vec{x}-\vec{x}^\prime\vert}d^3x^\prime \label{ecparacomparar1} \\
+\vec{J}_T&=&\frac{1}{4\pi}\vec{\nabla}\times\vec{\nabla}\times\int\frac{\vec{J}}{\vert\vec{x}-\vec{x}^\prime\vert}d^3x^\prime \label{corrientetransversal}
+\end{eqnarray}
+Comparando \eqref{ecparacomparar} con \eqref{solucion1} se obtiene que
+\begin{equation}
+\vec{\nabla}\frac{\partial\phi}{\partial t}=4\pi\vec{J}_L. \label{comparacion}
+\end{equation}
+Por lo tanto, la fuente de la ecuaci'on de onda para $\vec{A}$ puede ser expresada enteramente en t'erminos de la corriente transversal \eqref{corrientetransversal}:
+\begin{equation}
+\vec{\nabla}^2\vec{A}-\frac{1}{c^2}\frac{\partial^2\vec{A}}{\partial t^2}=-\frac{4\pi}{c}\vec{J}_T.
+\end{equation}
+Se dice que este campo es transversal porque satisface
+\begin{equation}
+\vec{\nabla}\cdot\vec{J}_T=0.
+\end{equation}
+El gauge de Coulomb es usualmente usado en regiones donde no hay fuentes presentes. En este caso es posible adem'as elegir $\phi=0$ en esas regiones, de modo que toda la informaci'on del campo electromagn'etico es contenida en el potencial vectorial $\vec{A}$.
+\subsection{Formulaci'on Covariante; Potenciales y Transformaciones de Gauge}
+Como sabemos, los potenciales electromagn'eticos est'an dados por el potencial escalar $\phi$ y el potencial vectorial $\vec{A}$, de modo que en t'erminos de ellos los campos el'ectrico y magn'etico satisfacen autom'aticamente las ecuaciones de Maxwell homog'eneas, y tienen la forma 
+\begin{eqnarray}
+\vec{E}&=&-\frac{1}{c}\frac{\partial\vec{A}}{\partial t}-\vec{\nabla}\phi, \\
+\vec{B}&=&\vec{\nabla}\times\vec{A}.
+\end{eqnarray}
+Los potenciales no son funciones definidas de manera 'unica. Esto se manifiesta en la invariancia de los campos $\vec{E}$ y  $\vec{B}$ bajo una transformaci'on de gauge:
+\begin{equation}
+\phi^\prime=\phi+\frac{1}{c}\frac{\partial\Lambda}{\partial t},\,\,\,\vec{A}^\prime=\vec{A}-\vec{\nabla}\Lambda,
+\end{equation}
+donde $\Lambda=\Lambda(\vec{x},t)$  es una funci'on escalar arbitraia del espacio-tiempo.
+En la formulaci'on covariante, podemos combinar los potenciales en el llamado cuadri-potencial vectorial
+\begin{equation}
+A^\mu=(\phi,\vec{A}),\,\,\,\,A_\mu=(\phi,-\vec{A}).
+\end{equation}
+Si ahora definimos el tensor electromagn'etico como
+\begin{equation}
+F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu =-F_{\nu\mu},\,\,\,\mu,\nu=0,1,2,3,
+\end{equation}
+notamos que
+\begin{equation}
+F_{0i}=\partial_0 A_i-\partial_i A_0=E_i.
+\end{equation}
+Similarmente,
+\begin{equation}
+F_{ij}=\partial_i A_j-\partial_j A_i=-\epsilon_{ijk}B_k,
+\end{equation}
+donde $\epsilon_{ijk}$ denota el tensor tres dimensional de Levi-Civita.
+En resumen,
+\begin{equation}
+F_{\mu\nu}:=\begin{pmatrix}0 & E^{x} & E^{y} & E^{z}\\
+-E^{x} & 0 & cB^{z} & -cB^{y}\\
+-E^{y} & -cB^{z} & 0 & cB^{x}\\
+-E^{z} & cB^{y} & -cB^{x} & 0
+\end{pmatrix}
+\end{equation}
+En otras palabras, las seis componentes independientes del tensor $F_{\mu\nu}$ son dadas por el campo el'ectrico y magn'etico.
+Es f'acil verificar que las ecuaciones $\vec{\nabla}\cdot\vec{E}=0$ y $\vec{\nabla}\times\vec{B}=\partial\vec{E}/\partial t$ son dadas por
+\begin{equation}
+\partial_{\mu}F^{\mu\nu}=0 \label{ecuacionesdemaxwell}
+\end{equation}
+Por otra parte, la invariancia de gauge de las ecuaciones de Maxwell es evidente en esta formulaci'on. Por ejemplo, notemos que bajo una transformaci'on de gauge
+\begin{equation}
+\begin{aligned}
+A_{\mu}(x)\rightarrow A^\prime_{\mu}(x)=A_{\mu}+\partial_\mu \theta(x), \\
+\quad \text{o},\,\,\,\,\, \delta A_{\mu}=A^\prime_{\mu}(x)-A_{\mu}(x)= \partial_\mu \theta(x), \label{tranfgaugecov}
+\end{aligned}
+\end{equation}
+donde $\theta(x)$ es un par'ametro de transformaci'on  arbitrario local y real. Entonces
+\begin{equation}
+\begin{aligned}
+F_{\mu\nu}&\rightarrow  F^{\prime}_{\mu\nu}=\partial_\mu A^{\prime}_\nu-\partial_\nu A^{\prime}_\mu \\
+&= \partial_\mu (A_\nu+\partial_\nu \theta)-\partial_\nu (A_\mu+\partial_\mu \theta) \\
+&= \partial_\mu A_\nu-\partial_\nu A_\mu=F_{\mu\nu}
+\end{aligned}
+\end{equation}
+En otras palabras, el tensor electromagn'etico es invariante bajo la transformaci'on de gauge \eqref{tranfgaugecov} del cuadripotencial vectorial $A_\mu (x)$. Consecuentemente, las ecuaciones de Maxwell \eqref{ecuacionesdemaxwell} son tambi'en invariantes bajo esta transformaci'on.

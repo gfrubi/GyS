@@ -1,0 +1,456 @@
+\chapter{Teor'ia de Yang-Mills}
+En el cap'itulo anterior, hablamos sobre la teor'ia de gauge m'as simple, la teor'ia de Maxwell, la cual se basa en el grupo Abeliano $U(1)$.
+Ahora estudiaremos teor'ias de gauge basadas en simetr'ias m'as complicadas. Tales teor'ias corresponden a teor'ias basadas en grupos de gauge no-Abelianos (no-conmunativos), las cuales son com'unmente llamadas teor'ias de Yang-Mills y son teor'ias fundamentales en la construcci'on de teor'ias f'isicas, como por ejemplo, la teor'ia del Modelo Est'andar.
+\section{Teor'ias de Gauge no Abelianas}
+Recordemos que una teor'ia de gauge  nace cuando tratamos de promover una simetr'ia global a una simetr'ia local. Por ejemplo, revisemos c'omo los campos de gauge entran en la teor'ia en el caso de la electrodin'amica cu'antica.
+Consideremos  la densidad lagrangiana de Dirac para un fermi'on libre,
+\begin{equation}
+\mathcal{L}=\bar{\psi}\left(i\hslash c\gamma^\mu \partial_\mu -mc^2\right)\psi. \label{lagrangianodirac}
+\end{equation}
+Este lagrangiano es invariante bajo una transformaci'on de fase global $U(1)$ de la forma
+\begin{eqnarray}
+\psi(x)&\rightarrow & \psi^\prime (x)=e^{-i\theta}\psi(x), \\
+\bar{\psi}(x)&\rightarrow & \bar{\psi}^\prime (x)=\bar{\psi}(x) e^{-i\theta}
+\end{eqnarray}
+o
+\begin{eqnarray}
+\delta \psi&=&-i\theta \psi, \\
+\delta\bar{\psi}&=&i\theta\bar{\psi}.
+\end{eqnarray}
+La densidad  lagrangiana dada por \eqref{lagrangianodirac} transforma como
+\begin{equation}
+\begin{aligned}
+\mathcal{L}(\psi ,\bar{\psi})&\rightarrow  \mathcal{L}(\psi^\prime,\bar{\psi}^\prime) \\
+&=\bar{\psi}^\prime\left(i\hslash c\gamma^\mu \partial_\mu -mc^2\right)\psi^\prime \\
+&=\bar{\psi}e^{i\theta}\left(i\hslash c\gamma^\mu \partial_\mu -mc^2\right)e^{-i\theta}\psi^\prime \\
+&=\bar{\psi}\left(i\hslash c\gamma^\mu \partial_\mu -mc^2\right)\psi \\
+&=\mathcal{L}(\psi,\bar{\psi}).
+\end{aligned}
+\end{equation} 
+La simetr'ia interna en este caso asoma del hecho que $\psi$ es un campo complejo  mientras que la densidad lagrangiana  es herm'itica. 
+Si ahora queremos promover la simetr'ia a ser local,  llamando $\theta=\theta(x)$, notamos que
+\begin{equation}
+\begin{aligned}\label{transformaciondefase}
+\delta \psi&=-i\theta \psi, \\
+\delta\bar{\psi}&=i\theta\bar{\psi}, \\
+\delta(\partial_\mu \psi)&=\partial_\mu(\delta\psi)=\partial(-i\theta(x)\psi) \\
+&=-i((\partial_\mu \theta(x)+\theta(x)\partial_\mu)\psi(x).
+\end{aligned}
+\end{equation}
+Consecuentemente, tenemos (considerando $\hbar=1,\,c=1$)
+\begin{equation}
+\begin{aligned}
+\delta \mathcal{L}&=i\delta\bar{\psi}( \gamma^\mu \partial_\mu) \psi + i\bar{\psi} \gamma^\mu \partial_\mu \delta \psi-m\delta \bar{\psi}\psi-m\bar{\psi} \delta \psi \\
+&=-\theta(x)\bar{\psi}\gamma^\mu\partial_\mu\psi+\bar{\psi}\gamma^\mu((\partial_\mu\theta(x))+\theta(x)\partial_\mu)\psi-im\theta(x)\bar{\psi}\psi+im\theta(x)\bar{\psi}\psi \\
+&=(\partial_\mu\theta(x))\gamma^\mu\psi.
+\end{aligned}
+\end{equation}
+Luego, ni la densidad lagrangiana \eqref{lagrangianodirac} ni la correspondiente acci'on es invariante bajo la transformaci'on local de fase \eqref{transformaciondefase} dado que $\partial_\mu \psi$ no transforma covariantemente y no hay t'erminos en la densidad lagrangiana cuya variaci'on pueda cancelar el t'ermino $\partial_\mu \theta(x)$.
+La manera de deshacerse de este problema es definiendo una \textbf{derivada covariante} $D_\mu \psi$ que transforme covariantemente bajo transformaciones locales, es decir,
+\begin{equation}
+\delta(D_\mu\psi)=-i\theta(x)D_\mu\psi(x).
+\end{equation}
+Para que esto se cumpla, debemos introducir un nuevo campo  $A_\mu (x)$ (campo de gauge) y definimos la derivada covariante como
+\begin{equation}
+D_\mu \psi(x):=(\partial_\mu+ieA_\mu(x))\psi(x), \label{derivadacovariante1}
+\end{equation}
+donde $e$ es una constante de acoplamiento y con la transformaci'on del campo como
+\begin{equation}
+\delta A_\mu(x)=\frac{1}{e}\partial_\mu\theta(x).
+\end{equation}
+Reconocemos a \eqref{derivadacovariante1} como el acoplamiento minimal de un fermi'on cargado al campo electromagn'etico, y luego
+\begin{equation}
+\mathcal{L}=i\bar{\psi}\gamma^\mu D_\mu\psi(x)-m\bar{\psi}\psi,
+\end{equation}
+es invariante bajo la transformaciones (infinitesimales) locales  de gauge
+\begin{equation}
+\begin{aligned} \label{transformacionesdegauge}
+\delta\psi&=-i\theta(x)\psi, \\
+\delta\bar{\psi}&=i\theta(x)\bar{\psi},\\
+\delta A_\mu&=\frac{1}{e}\partial_\mu\theta(x).
+\end{aligned}
+\end{equation}
+Sin embargo, el campo $A_\mu$ conocido como campo de gauge, no tiene din'amica en esta teor'ia. Para introducir ``la parte''  de energ'ia cin'etica al campo de gauge (con la intensi'on de darle din'amica) de una manera invariante, definimos el tensor 
+\begin{equation}\label{tensorfmunu}
+F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu=-F_{\nu\mu},
+\end{equation} 
+el cual bajo la transformaci'on de gauge \eqref{transformacionesdegauge} transforma como
+\begin{equation}
+\delta F_{\mu\nu} =\partial_\mu \delta A_\nu-\partial_\nu \delta A_\mu = \frac{1}{e}(\partial_\mu\partial_\nu\theta-\partial_\nu\partial_\mu\theta)=0.
+\end{equation}
+Dado que el tensor $F_{\mu\nu}$ es invariante de gauge  el lagrangiano invariante de gauge para la parte ``din'amica" del campo de gauge puede ser escrita como
+\begin{equation}
+\mathcal{L}_{\text{gauge}}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+El lagrangiano total para QED es luego dado por
+\begin{equation}
+\mathcal{L}_{\text{QED}}=i\bar{\psi}\gamma^\mu D_\mu \psi-m\bar{\psi}\psi-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+Sobre la constante $1/4$ consideremos lo siguiente. Consideremos el lagrangiano
+\begin{equation}
+\begin{aligned}\label{ecuaciones9.16}
+\mathcal{L}&=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}=-\frac{1}{4}(\partial_\mu A_\nu-\partial_\nu A_\mu)(\partial^\mu A^\nu-\partial^\nu A^\mu) \\
+&=-\frac{1}{2}\partial_\mu A_\nu(\partial^\mu A^\nu-\partial^\nu A^\mu),
+\end{aligned}
+\end{equation}
+Considerando las ecuaciones de Euler-Lagrange obtenemos que
+\begin{equation}
+\begin{aligned}
+\frac{\partial\mathcal{L}}{\partial A_\nu}&=0, \\
+\frac{\partial\mathcal{L}}{\partial(\partial_\mu A_\nu)}&=-\frac{1}{2}(\partial^\mu A^\nu-\partial^\nu A^\mu)-\frac{1}{2}\partial^\mu A^\nu+\frac{1}{2}\partial^\nu A^\mu \\
+&=-(\partial^\mu A^\nu-\partial^\nu A^\mu)=-F^{\mu\nu},
+\end{aligned}
+\end{equation}
+por lo tanto las ecuaciones de Euler-Lagrange, en este caso, toman la forma
+\begin{equation}
+\begin{aligned}
+\frac{\partial\mathcal{L}}{\partial A_\nu}-\partial_\mu \frac{\partial\mathcal{L}}{\partial(\partial_\mu A_\nu)}=0, \\
+\text{o},\quad \partial_\mu(\partial^\mu A^\nu-\partial^\nu A^\mu)=\partial_\mu F^{\mu\nu}=0,
+\end{aligned}
+\end{equation}
+lo cual corresponde a las ecuaciones de Maxwell covariantes. Notemos que
+\begin{equation}\label{ecuacion9.19}
+\mathcal{L}=\frac{1}{4}F_{\mu\nu}F^{\mu\nu}-\frac{1}{2}F_{\mu\nu}(\partial^\mu A^\nu-\partial^\nu A^\mu),
+\end{equation}
+con $A_\mu$ y $F_{\mu\nu}$ tratados como variables din'amicas independientes tambi'en entregan las ecuaciones de Maxwell al calcular las ecuaciones de Euler-Lagrange, consideramos
+\begin{equation}\label{ecuacion9.20}
+\begin{aligned}
+\frac{\partial\mathcal{L}}{\partial A_\nu}&=0, \\
+\partial_\mu \frac{\partial\mathcal{L}}{\partial(\partial_\mu A_\nu)}&=0.
+\end{aligned}
+\end{equation}
+Sin embargo, consideraremos la densidad lagrangiana m'as simple, es decir, ecuaci'on \eqref{ecuaciones9.16}, ya que la densidad lagrangiana \eqref{ecuacion9.19} es equivalente a \eqref{ecuaciones9.16} cuando el
+campo variable $F_{\mu\nu}$  se elimina usando la ecuaci'on de campo de \eqref{ecuacion9.20}.
+\section{Generalizaciones}
+Ahora generalizaremos las ideas anteriores para teor'ias con simetr'ias m'as complicadas. Consideremos una teor'ia descrita por el lagrangiano
+\begin{equation}
+\mathcal{L}=i\bar{\psi}_k\gamma^\mu\partial_\mu \psi_k-m\bar{\psi}_k\psi_k,\,\,\, \quad k=1,2,...,\dim (R).
+\end{equation}
+Asumamos que $\psi_k$ pertenece a una representaci'on $R$ no trivial de alg'un grupo $G$ y $\dim (R)$ denota la dimensi'on de esta representaci'on. Este lagrangiano es invariante bajo la transformaci'on global
+\begin{equation}
+\begin{aligned}
+\psi_k \rightarrow &(U\psi)_k =\left(e^{-i\theta^a T^a}\psi\right)_k,\,\,\, \quad a=1,2,...,\dim (G), \\
+\bar{\psi}_k \rightarrow & (\bar{\psi}U^\dagger )_k=(\bar{\psi} U^{-1})_k=\left(\bar{\psi}e^{i\theta^a T^a}\right)_k,
+\end{aligned}
+\end{equation} 
+donde $\theta^a$ denota un par'ametro real de fase global. Luego, infinitesimalmente tenemos
+\begin{equation}
+\begin{aligned} \label{lagrangianoinvariante}
+\delta \psi_k &= -i\theta^a T^{a}_{kl} \psi_l, \\
+\delta \bar{\psi}_k &= -i\theta^a \bar{\psi}_l (T^{a})_{lk},
+\end{aligned}
+\end{equation}
+donde los $T^a$ representan los generadores del grupo de simetr'ia $G$. Estos generadores satisfacen el 'algebra de Lie del grupo, la cual como sabemos es de la forma
+\begin{equation} \label{algebradelie}
+[T^a,T^b]=if^{abc}T^c,
+\end{equation}
+donde las constantes de estructura $f^{abc}$ son constantes reales y completamente antisim'etricas (bajo en cambio de cualquier par de 'indices). Cuando los generadores del grupo de simetr'ia no conmutan, es decir, las constantes de estructura son no triviales, el grupo de simetr'ia se denomina grupo no Abeliano. Podemos ver que el lagrangiano es invariante bajo la transformaci'on \eqref{lagrangianoinvariante}, de modo que
+\begin{equation}
+\begin{aligned}
+\delta\mathcal{L}&=\delta\bar{\psi}_k(i\gamma^\mu \partial_\mu-m)\psi_k+\bar{\psi}_k(i\gamma^\mu\partial_\mu-m)\delta \psi_k \\
+&=i\theta^a \bar{\psi} _l (T^a)_{lk}(i\gamma^\mu \partial_\mu-m)\psi_k-i\theta^a \bar{\psi}_k(i\gamma^\mu \partial _\mu-m)T^a_{kl}\psi_l \\
+&=i\theta^a \bar{\psi}_k(T^a)_{kl}(i\gamma^\mu \partial_\mu-m)\psi_l-i\theta^a \bar{\psi}_k(i\gamma^\mu \partial_\mu -m) T^a_{kl}\psi_l \\
+&=0.
+\end{aligned}
+\end{equation}
+Ahora, consideremos transformaciones infinitesimales locales de la forma
+\begin{equation}
+\begin{aligned} \label{lagrangianoinvariante1}
+\delta \psi_k &= -i\theta^a(x) T^{a}_{kl} \psi_l, \qquad \delta \bar{\psi}_k=-i\theta^a(x) \bar{\psi}_l (T^{a})_{lk}.
+\end{aligned}
+\end{equation}
+Como hemos visto anteriormente, notemos que la derivada ordinaria actuando sobre los campos no transforma covariantemente bajo la  transformaci'on \eqref{lagrangianoinvariante1}, luego
+\begin{equation}
+\begin{aligned}
+\delta(\partial_\mu \psi_k)&= \partial_\mu (-i\theta^a(x)T^a_{kl}\psi_l) \\
+&= -i(\partial_\mu \theta^a(x))T^a_kl \psi_l-i\theta^a(x)T^a_{kl}\partial_\mu \psi_l.
+\end{aligned}
+\end{equation}
+As'i,
+\begin{equation}
+\begin{aligned}
+\delta\mathcal{L}&=\delta \bar\psi_k (i\gamma^\mu \partial_\mu-m)\psi_k+\bar{\psi}_k(i\gamma^\mu\partial_\mu-m)\delta\psi_k \\
+&= (\partial_\mu \theta^a(x))\bar{\psi}_k\gamma^\mu (T^a)_{kl}\psi_l.
+\end{aligned}
+\end{equation}
+Como en el caso de $U(1)$ que vimos anteriormente, no hay ning'un t'ermino en el lagrangiano que pueda anular al t'ermino $\partial_\mu \theta^a(x)$ de modo que el lagrangiano se mantenga invariante. Por lo tanto, definimos una derivada covariante $(D_\mu \psi)_k$  tal que bajo una tranformaci'on infinitesimal local
+\begin{equation}
+\delta(D_\mu \psi)_k=-i\theta^a(x)T^a_{kl}(D_\mu \psi)_l.
+\end{equation}
+Introduciendo un nuevo campo (campo de gauge), escribimos la derivada covariante como
+\begin{equation}
+D_\mu \psi := (\partial_\mu +igA_\mu)\psi,
+\end{equation}
+donde $g$ denota una constante de acoplamiento y 
+\begin{equation} \label{campoA}
+A_\mu =T^a A^a_\mu.
+\end{equation}
+Escribiendo la derivada covariante expl'icitamente, tenemos
+\begin{equation} \label{derivadacovariante2}
+D_\mu \psi_k =\partial_\mu \psi_k +ig T^a_{kl} A^a_\mu \psi_l=(\partial_\mu \delta_{kl}+igT^a_{kl}A^a_\mu)\psi_l.
+\end{equation}
+Teniendo en cuenta que queremos que la derivada covariante transforme covariantemente bajo una transformaci'on infinitesimal local tenemos
+\begin{equation}
+\delta (D_\mu \psi)_k=-i\theta^aT^a_{kl}(D_\mu\psi)_l,
+\end{equation}
+de \eqref{derivadacovariante2} debemos tener que
+\begin{equation}\label{formaderivadacovariante}
+\begin{aligned}
+igT^a_{kl}\delta(A^a_\mu \psi_l)&=\delta(D_\mu\psi_k)-\partial_\mu \delta\psi_k \\
+&=-i\theta^a T^a_{kl}(D_\mu\psi)_l-\partial_\mu \delta\psi_k \\
+&= -i\theta T^a_{kl}(\partial_\mu \psi_l+igT^b_{lm}A^b_\mu\psi_m)-\partial_\mu (-i\theta^a T^a_{kl}\psi_l) \\
+&= -i\theta^aT^a_{kl}(\partial_\mu \psi_l+igT^b_{lm}A^b_\mu\psi_m)+i(\partial_\mu\theta^a)T^a_{kl}\psi_l+i\theta^a T^a_{kl}\partial_\mu \psi_l \\
+&= i(\partial_\mu \theta^a)T^a_{kl}\psi_l+g\theta^aT^a_{kl}T^b_{lm}A^b_\mu \psi_m.
+\end{aligned}
+\end{equation}
+Del lado izquierdo de \eqref{formaderivadacovariante} notamos que podemos escribir
+\begin{equation}
+\begin{aligned}
+igT^a_{kl}\delta(A^a_\mu \psi_l)&=igT^a_{kl}\delta A^a_\mu\psi_l+igT^a_{kl}A^a_\mu \delta\psi_l \\
+&=igT^a_{kl}\delta A^a_\mu \psi_l+igT^a_{kl}A^a_\mu(-i\theta^b)T^b_{lm}\psi_m \\
+&= igT^a_{kl}\delta A^a_\mu \psi_l+g\theta^a T^b_{kl}A^b_\mu T^a_{lm}\psi_m.
+\end{aligned}
+\end{equation} 
+Reemplazando lo anterior en \eqref{formaderivadacovariante}, tenemos
+\begin{equation}
+\begin{aligned}
+igT^a_{kl}\delta A^a_\mu \psi_l&=i(\partial_\mu \theta^a)T^a_{kl}\psi_l+g\theta^a(T^aT^b)_{km}A^b_\mu \psi_m-g\theta^a(T^bT^a)_{km}A^b_\mu \psi_m \\
+&= i(\partial_\mu \theta^a)T^a_{kl}\psi_l +g\theta^a[T^a,T^b]_{km}A^b_\mu \psi_m \\
+&= i(\partial_\mu \theta^a)T^a_{kl}\psi_l+ig\theta^a f^{abc}(T^c)_{km}A^b_\mu \psi_m.
+\end{aligned}
+\end{equation}
+Lo podemos reescribir como
+\begin{equation}
+igT^a_{kl}\psi_l(\delta A^a _\mu -\frac{1}{g}\partial_\mu \theta^a+f^{abc}A^b_\mu \theta^c)=0,
+\end{equation}
+lo cual determina que la transformaci'on para el campo de gauge debe ser
+\begin{equation}
+\delta A^a_\mu=\frac{1}{g}(\partial_\mu \theta^a-gf^{abc}A^b_\mu \theta^c)=\frac{1}{g}\partial_\mu \theta^a-f^{abc}A^b_\mu \theta^c.
+\end{equation}
+Por lo tanto, el lagrangiano
+\begin{equation}
+\mathcal{L}=i\bar{\psi}_k\gamma^\mu (D_\mu \psi)_k-m\bar{\psi}_k\psi_k,
+\end{equation}
+con derivada covariante definida en \eqref{lagrangianoinvariante1} es invariante bajo las transformaciones infinitecimales locales:
+\begin{equation} \label{eq1234}
+\begin{aligned}
+\delta \psi_k =& -i\theta^a(x)T^a_{kl}\psi_l(x), \\
+\delta \bar{\psi}_k =& i\theta^a(x)\bar{\psi}_lT^a_{lk}, \\
+\delta A_\mu ^a=& \frac{1}{g}\partial_\mu \theta^a-f^{abc}A_\mu ^b \theta^c.
+\end{aligned}
+\end{equation}
+Si usamos la definici'on de \eqref{campoA}, donde los campos de gauge $A_\mu$ son matrices que pertenecen a la misma representaci'on del grupo (que los campos $\psi_k$, podemos escribir el lagrangiano en t'erminos de matrices como
+\begin{equation}
+\mathcal{L}=i\bar{\psi}\gamma^\mu D_\mu \psi-m\bar{\psi}\psi,
+\end{equation}
+con  el producto normal de matrices. De esta forma podemos definir una representaci'on unitaria del grupo
+\begin{equation}\label{representacionU}
+U=e^{-i\theta^a(x)T^a},\qquad U^\dagger=U^{-1},
+\end{equation}
+de modo que podemos escribir las transformaciones finitas para los campos en la forma de matrices como
+\begin{equation} \label{transformaciones12.38}
+\begin{aligned}
+\psi\rightarrow &\quad U \psi, \\
+\bar{\psi}\rightarrow &\quad \bar{\psi}U^{-1}, \\
+A_\mu \rightarrow &\quad UA_\mu U^{-1}-\frac{1}{ig}(\partial_\mu U)U^{-1}.
+\end{aligned}
+\end{equation}
+
+Para construir el lagrangiano para la parte din'amica del campo de gauge de una forma invariante de gauge, notemos que bajo la transformaci'on de gauge \eqref{transformaciones12.38} el tensor $F_{\mu\nu}$ definido en \eqref{tensorfmunu} transformar'ia como
+\begin{equation}\label{equation12.39}
+\begin{aligned}
+f_{\mu\nu}&=\partial_\mu A_\nu-\partial_\nu A_\mu \\
+& \rightarrow  \partial_\mu \left[UA_\nu U^{-1}-\frac{1}{ig}(\partial_\nu U)U^{-1}\right]-\partial_\nu\left[UA_\mu U^{-1}-\frac{1}{ig}(\partial_\mu U)U^{-1}\right] \\
+&=\partial_\mu(UA_\nu U^{-1})-\frac{1}{ig}(\partial_\mu \partial_\nu U)U^{-1}-\frac{1}{ig}(\partial_\nu U)(\partial_\mu U^{-1})-\partial_\nu(UA_\mu U^{-1})+\frac{1}{ig}(\partial_\nu \partial_\mu U)U^{-1}+\frac{1}{ig}(\partial_\mu U)(\partial_\nu U^{-1}) \\
+&=\frac{1}{ig}(\partial_\mu U)(\partial_\nu U^{-1})-\frac{1}{ig}(\partial_\nu U)(\partial_\mu U^{-1})+\partial_\mu U A_\nu U^{-1}+U\partial_\mu A_\nu U^{-1}+U\partial_\mu A_\nu U^{-1}+UA_\nu \partial_\mu U^{-1}-\partial_\nu U A_\mu U^{-1}\\
+& \qquad-U\partial_\nu A_\mu U^{-1}-UA_\mu \partial_\nu U^{-1} \\
+&=\frac{1}{ig}\left(\partial_\mu U \partial_\nu U^{-1}-\partial_\nu U \partial_\mu U^{-1}\right)+\partial_\mu U A_\nu U^{-1}+UA_\nu \partial_\mu U^{-1}-\partial_\nu U A_\mu U^{-1}-UA_\mu \partial_\nu U^{-1} \\
+& \qquad+U\left(\partial_\mu A_\nu-\partial_\nu A_\mu \right)U^{-1}.
+\end{aligned}
+\end{equation}
+Notemos que, a diferencia del caso de QED, aqu'i $f_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$, no es ni invariante ni tiene una transformaci'on bajo la transformaci'on de gauge \eqref{transformaciones12.38}. Tambi'en debemos notar que bajo la transformaci'on de gauge
+\begin{equation} \label{equation12.40}
+\begin{aligned}
+ig\left[A_\mu , A_\nu\right]&=ig(A_\mu A_\nu-A_\nu A_\mu) \\
+&\rightarrow ig \left[ \left(UA_\mu U^{-1}-\frac{1}{ig}(\partial_\mu U)U^{-1}\right)\left(UA_\nu U^{-1}-\frac{1}{ig}(\partial_\nu U)U^{-1}\right)\right] \\
+& \qquad -ig\left[\left(UA_\nu U^{-1}-\frac{1}{ig}(\partial_\nu U)U^{-1}\right) \left(UA_\mu U^{-1}-\frac{1}{ig}(\partial_\mu U)U^{-1}\right)\right] \\
+&=ig\left[ UA_\mu A_\nu U^{-1}-\frac{1}{ig}(\partial_\mu U A_\nu U^{-1}-UA_\mu \partial_\nu U^{-1})+\frac{1}{g^2}\partial_\mu U \partial_\nu U^{-1}-UA_\nu A_\mu U^{-1}\right. \\
+& \qquad  \left. +\frac{1}{ig}(\partial_\nu U A_\mu U^{-1}-UA_\nu\partial_\mu U^{-1})-\frac{1}{g^2}\partial_\nu U \partial_\mu U^{-1}\right] \\
+&=igU[A_\mu , A_\nu]U^{-1}-\frac{1}{ig}(\partial_\mu U \partial_\nu U^{-1}-\partial_\nu U \partial_\mu U^{-1})\\
+& \qquad-[\partial_\mu U A_\nu U^{-1}+UA_\nu \partial_\mu U^{-1}-\partial_\nu U A_\mu U^{-1}-UA_\mu \partial_\nu U^{-1}].
+\end{aligned}
+\end{equation}
+Comparando \eqref{equation12.39} y \eqref{equation12.40}, es claro que, en este caso, si definimos el tensor 
+\begin{equation}\label{tensorfmunucov}
+F_{\mu\nu}:=\partial_\mu A_\nu-\partial_\nu A_\mu+ig[A_\mu , A_\nu],
+\end{equation}
+entonces bajo la transformaci'on de gauge \eqref{transformaciones12.38},
+\begin{equation} \label{eq1242}
+F_{\mu\nu}\rightarrow UF_{\mu\nu}U^{-1}.
+\end{equation}
+Por lo tanto, $F_{\mu\nu}$ transforma covariantemente. Ahora podemos construir el lagrangiano invariante de gauge para la parte din'amica del campo de gauge como
+\begin{equation}
+\mathcal{L}_{\text{gauge}}=-\frac{1}{2}Tr \left(F_{\mu\nu}F^{\mu\nu}\right)=-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu\,a}.
+\end{equation}
+En t'erminos de sus componentes, el tensor $F_{\mu\nu}$ definido en \eqref{tensorfmunucov} toma la forma
+\begin{equation}
+\begin{aligned}
+F_{\mu\nu}&=\partial_\mu A_\nu-\partial_\nu A_\mu+ig[A_\mu , A_\nu], \\
+F^a_{\mu\nu}T^a&=(\partial_\mu A^a_\nu-\partial_\nu A^a_\mu)T^a+igA^b_\mu A^c_\nu[T^b , T^c] \\
+&=(\partial_\mu A^a_\nu-\partial_\nu A^a_\mu)T^a-gf^{abc}A^b_{\mu}A^c_\nu T^a, \\
+F^a_{\mu\nu}&=\partial_\mu A^a_\nu-\partial_\nu A^a_\mu -gf^{abc}A^b_{\mu}A^c_\nu =-F^a_{\nu\mu},
+\end{aligned}
+\end{equation}
+de modo que $\mathcal{L}_{\text{gauge}}$ puede ser escrito en t'erminos de sus componentes como
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_{\text{gauge}}&=-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu\,a} \\
+&=-\frac{1}{4}(\partial_\mu A_\nu ^a-\partial_\nu A_\mu ^a-gf^{abc}A_\mu ^b A^c_\nu)(\partial ^\mu A^{\nu\,a}-\partial^\nu A^{\mu\,a}-gf^{apq}A^{\mu\,p} A^{\nu\,q}).
+\end{aligned}
+\end{equation}
+\section{'Algebra asociada}
+Ahora, veamos algunas de las propiedades del 'algebra de Lie del grupo de simetr'ia $G$. El 'algebra de los generadores, tal como vimos, es de la forma de \eqref{algebradelie} y sabemos que la identidad de Jacobi asociada con esta 'algebra es dada por
+\begin{equation}\label{idjacobi}
+[[T^a,T^b],T^c]+[[T^c,T^a],T^b]+[[T^b,T^c],T^a]=0.
+\end{equation}
+Usando \eqref{algebradelie} se puede ver que la identidad de Jacobi en \eqref{idjacobi} impone una restricci'on sobre las constantes de estructura del grupo que es de la forma
+\begin{equation}
+\begin{aligned}
+if^{abp}[T^p,T^c]+if^{cap}[T^p,T^b]+if^{bcp}[T^p,T^a]=&0, \\
+f^{abp}f^{pcq}T^q+f^{cap}f^{pbq}T^q+f^{bcp}f^{paq}T^q=&0, \\
+f^{abp}f^{pcq}+f^{cap}f^{pbq}+f^{bcp}f^{paq}=&0.
+\end{aligned}
+\end{equation}
+De la estructura del 'algebra de Lie sabemos que podemos escribir los elementos del grupo en una forma de representaci'on unitaria:
+\begin{equation}
+U(x)=e^{i\theta^a(x)T^a}.
+\end{equation}
+Si somos capaces de dividir  los generadores del 'algebra de Lie no Abeliana en dos subconjuntos no Abelianos  tales que $f^{abc}=0$ cuando un 'indice est'a en un conjunto y otro 'indice en el segundo conjunto, el 'algebra de Lie se divide en dos sub'algebras no Abelianas conmutativas. En este caso el grupo $G$ es un producto directo de dos grupos de Lie no Abelianos independientes. Un grupo de Lie no Abeliano que no puede ser factorizado es llamado grupo de Lie simple. El producto directo de grupos de Lie simples es llamado semi-simple. En nuestro an'alisis, hemos asumido que nuestro grupo de simetr'ia $G$ es simple.
+Para alguna representaci'on de un grupo de Lie simple podemos escribir 
+\begin{equation}\label{C2}
+Tr\, (T^a T^b)=C_2 \delta^{ab}.
+\end{equation}
+Aqu'i, $C_2$ es una constante de normalizaci'on que determina el valor de las constantes de estructura. 'Esta depende de la representaci'on, pero no de los 'indices $a$ y $b$. Para probar esto notemos que siempre podemos diagonalizar el tensor $Tr(T^aT^b)$ de manera que
+\begin{equation}
+Tr(T^{a}T^{b})=\begin{cases}
+0 & \text{si }a\neq b,\\
+K_{a} & \text{si }a=b.
+\end{cases}
+\end{equation}
+Usando la propiedad de ciclicidad de la traza, notemos que la cantidad
+\begin{equation}
+\begin{aligned}
+h^{abc}&=Tr([T^a,T^b]T^c) \\
+&=Tr(T^aT^bT^c)-Tr(T^bT^aT^c),
+\end{aligned}
+\end{equation}
+es completamente antisim'etrica en todos sus 'indices. Adem'as, usando la relaci'on de conmutaci'on \eqref{algebradelie} obtenemos
+\begin{equation}
+\begin{aligned}
+h^{abc}&=Tr(if^{abp}T^pT^c) \\
+&=if^{abp}Tr(T^pT^c) \\
+&=if^{abp}K_p \delta^{pc} \\
+&=iK_c f^{abc},
+\end{aligned}
+\end{equation}
+donde el 'indice $c$ es fijo. Por otro lado, notemos que
+\begin{equation}
+\begin{aligned}
+h^{abc}&=Tr([T^a,T^c]T^b) \\
+&=if^{acp}Tr(T^pT^b) \\
+&=if^{acp}K_p \delta^{pb} \\
+&=iK_b f^{acb}=-iK_bf^{abc},
+\end{aligned}
+\end{equation}
+con el 'indice $b$ fijo. Sin embargo, puesto que $h^{abc}$ es completamente antisim'etrico, tenemos que
+\begin{equation}
+h^{acb}=-h^{abc}.
+\end{equation}
+De esta manera podemos concluir que
+\begin{equation}
+K_b=K_c=K.
+\end{equation}
+Esto nos muestra entonces que \eqref{C2} depende s'olo de la representaci'on. Notemos que si escribimos
+\begin{equation}
+Tr(T^aT^b)=T(R)\delta^{ab}, \quad a,b=1,2,\ldots,\dim (G),
+\end{equation} 
+entonces $T(R)$ es conocido como el \textbf{'indice de la representaci´on $R$}. Similarmente, tenemos
+\begin{equation}
+(T^aT^a)_{mn}=C(R)\delta_{mn}, \quad m,n=1,2,\ldots,\dim (R),
+\end{equation}
+donde $C(R)$ es conocido como el \textbf{Casimir de la representaci'on $R$}. Ambos se escuentran relacionados mediante
+\begin{equation}
+T(R)\dim (G) = C(R) \dim (R).
+\end{equation}
+Podemos determinar los generadores del grupo en varias representaciones, sin embargo, una representaci'on particular es de mucha importancia y es dada por
+\begin{equation}
+(T^a)_{bc}=-if^{abc}.
+\end{equation}
+Esto es consistente con la hermiticidad requerida por los generadores, ya que
+\begin{equation}
+\begin{aligned}
+(T^{a \dagger})_{bc}&=((T^a)_{cb})^* \\
+&=(-if^{acb})^*=if^{acb}=-if^{abc}=(T^a)_{bc}.
+\end{aligned}
+\end{equation}
+Adem'as, podemos verificar que esta representaci'on satisface el 'algebra de Lie,
+\begin{equation}
+\begin{aligned}
+\left[T^a,T^b\right]_{cq}&=(T^aT^b-T^bT^a)_{cq} \\
+&=(T^a)_{cp}(T^b)_{pq}-(T^b)_{cp}(T^a)_{pq} \\
+&=(-if^{acp})(-if^{bpq})-(-if^{bcp})(-if^{apq}) \\
+&=-f^{acp}f^{bpq}+f^{bcp}f^{apq} \\
+&=-f^{cap}f^{pbq}-f^{bcp}f^{paq} \\
+&=f^{abp}f^{pcq} \\
+&=if^{abp}(-if^{pcq}) \\
+&=if^{abp}(T^b)_{cq},
+\end{aligned}
+\end{equation}
+donde hemos usado la antisimetr'ia de las constantes de estructura. Como resultado, conclu'imos que la identificaci'on
+\begin{equation}
+(T^a_{(\text{adj})})_{bc}=-if^{abc},
+\end{equation}
+define una representaci'on del 'algebra de Lie conocida como la \textit{representaci'on adjunta}.
+Consideremos nuevamente las transformaciones para los campos de gauge dados por \eqref{eq1234}, vemos que
+\begin{equation}
+\begin{aligned}
+\delta A^a _\mu&=\frac{1}{g}(\partial_\mu \theta^a-gf^{abc}A^b_\mu \theta^c) \\
+& =\frac{1}{g}(\partial_\mu \theta^a+gf^{bac}A^b_\mu \theta^c) \\
+&=\frac{1}{g}(\partial_\mu \theta^a+ig(-if^{bac}A^b_\mu \theta^c)) \\
+&=\frac{1}{g}(\partial_\mu \theta^a+ig(T^b_{\text{(adj)}})_{ac}A^b_\mu \theta^c),
+\end{aligned}
+\end{equation}
+de manera que podemos equivalentemente escribir
+\begin{equation}
+\delta A^a _\mu =\frac{1}{g}(D_\mu ^{\text{(adj)}}\theta)^a, 
+\end{equation}
+lo cual muestra que el campo de gauge $A_\mu$ transforma de acuerdo a la representaci'on adjunta del grupo de simetr'ia. Esto tambi'en puede ser visto de la transformaci'on del tensor $F_{\mu\nu}$ en \eqref{eq1242}, el cual infinitesimalmente tiene la forma
+\begin{equation}
+\begin{aligned}
+F_{\mu\nu}&\rightarrow UF_{\mu\nu}U^{-1} \\
+&=F_{\mu\nu}+i\theta^b[F_{\mu\nu},T^b],
+\end{aligned}
+\end{equation}
+de modo que
+\begin{equation}
+\begin{aligned}
+\delta F_{\mu\nu}&=i\theta^b [F_{\mu\nu},T^b] \\
+&=i\theta^b F^a_{\mu\nu}[T^a,T^b],
+\end{aligned}
+\end{equation}
+'o
+\begin{equation}
+\begin{aligned}
+\delta F^a_{\mu\nu}T^a=i\theta^b F^a_{\mu\nu}(if^{abc}T^c), 
+\end{aligned}
+\end{equation}
+o bien,
+\begin{equation}
+\begin{aligned}
+\delta F^a_{\mu\nu}&= -f^{abc} F^b_{\mu\nu} \theta^c \\
+&=-i(-if^{cab})\theta^c F^b_{\mu\nu} \\
+&=-i(T^c_{\text{(adj)}})_{ab}\theta^c F^b_{\mu\nu} \\
+&=-i\theta^c  (T^c_{\text{(adj)}})_{ab} F^b_{\mu\nu}.
+\end{aligned}
+\end{equation}
+Comparando los resultados anteriores con las transformaciones en \eqref{eq1234} concluimos que tanto el tensor $F_{\mu\nu}$ como tambi'en el campo de gauge $A_\mu$ transforman de acuerdo a la representaci'on adjunta del grupo.
